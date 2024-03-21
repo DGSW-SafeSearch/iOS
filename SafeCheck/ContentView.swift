@@ -1,15 +1,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isPresented: Bool = false
+    @State var image: UIImage?
+    
     var body: some View {
-        Button(action: {
+        VStack {
+            if let image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+            }
             
-        }) {
-            Text("버튼")
+            Button {
+                isPresented.toggle()
+            } label: {
+                Text("버튼")
+            }
+        }
+        .fullScreenCover(isPresented: $isPresented) {
+            CameraView($image)
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

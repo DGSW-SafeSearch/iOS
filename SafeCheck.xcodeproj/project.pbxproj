@@ -11,6 +11,8 @@
 		58601EC82BA9D8FA0068B072 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58601EC72BA9D8FA0068B072 /* ContentView.swift */; };
 		58601ECA2BA9D8FC0068B072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58601EC92BA9D8FC0068B072 /* Assets.xcassets */; };
 		58601ECD2BA9D8FC0068B072 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58601ECC2BA9D8FC0068B072 /* Preview Assets.xcassets */; };
+		58A950552BAA724300D220C0 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 58A950542BAA724300D220C0 /* Camera-SwiftUI */; };
+		58A950582BAA724B00D220C0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A950572BAA724B00D220C0 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		58601EC72BA9D8FA0068B072 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58601EC92BA9D8FC0068B072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58601ECC2BA9D8FC0068B072 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		58A950572BAA724B00D220C0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A950552BAA724300D220C0 /* Camera-SwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,7 @@
 			children = (
 				58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */,
 				58601EC72BA9D8FA0068B072 /* ContentView.swift */,
+				58A950562BAA724700D220C0 /* Component */,
 				58601EC92BA9D8FC0068B072 /* Assets.xcassets */,
 				58601ECB2BA9D8FC0068B072 /* Preview Content */,
 			);
@@ -65,6 +70,14 @@
 				58601ECC2BA9D8FC0068B072 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		58A950562BAA724700D220C0 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				58A950572BAA724B00D220C0 /* CameraView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +96,9 @@
 			dependencies = (
 			);
 			name = SafeCheck;
+			packageProductDependencies = (
+				58A950542BAA724300D220C0 /* Camera-SwiftUI */,
+			);
 			productName = SafeCheck;
 			productReference = 58601EC22BA9D8FA0068B072 /* SafeCheck.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 58601EB92BA9D8FA0068B072;
+			packageReferences = (
+				58A950532BAA724300D220C0 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
+			);
 			productRefGroup = 58601EC32BA9D8FA0068B072 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A950582BAA724B00D220C0 /* CameraView.swift in Sources */,
 				58601EC82BA9D8FA0068B072 /* ContentView.swift in Sources */,
 				58601EC62BA9D8FA0068B072 /* SafeCheckApp.swift in Sources */,
 			);
@@ -197,7 +217,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -275,11 +295,13 @@
 				DEVELOPMENT_TEAM = 8RGKJ6S53F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 접근이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +326,13 @@
 				DEVELOPMENT_TEAM = 8RGKJ6S53F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 접근이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		58A950532BAA724300D220C0 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rorodriguez116/Camera-SwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		58A950542BAA724300D220C0 /* Camera-SwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 58A950532BAA724300D220C0 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */;
+			productName = "Camera-SwiftUI";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 58601EBA2BA9D8FA0068B072 /* Project object */;
 }
