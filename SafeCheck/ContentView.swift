@@ -1,10 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @ObservedObject private var vision = Vision()
     @State var isPresent: Bool = false
     @State var isPresented: Bool = false
-    @State var image: UIImage?
+    @Binding var image: UIImage?
+    
     
     var body: some View {
         Button{
@@ -18,12 +19,20 @@ struct ContentView: View {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
+                        .onAppear {
+                            vision.reText(image: image)
+                        }
                 }
                 
-                Button {
-                    isPresented.toggle()
-                } label: {
-                    Text("버튼")
+                Text(vision.OCRString ?? "오류")
+                
+                HStack {
+                    Button {
+                        isPresented.toggle()
+                    } label: {
+                        Text("사진")
+                    }
+                    
                 }
             }
             .fullScreenCover(isPresented: $isPresented) {
