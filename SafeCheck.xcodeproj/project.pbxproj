@@ -13,7 +13,7 @@
 		58601ECD2BA9D8FC0068B072 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58601ECC2BA9D8FC0068B072 /* Preview Assets.xcassets */; };
 		5879754C2BAEA35100E28A31 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5879754B2BAEA35100E28A31 /* GoogleSignIn */; };
 		5879754E2BAEA35100E28A31 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5879754D2BAEA35100E28A31 /* GoogleSignInSwift */; };
-		587975512BAEA6EC00E28A31 /* VisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587975502BAEA6EC00E28A31 /* VisionView.swift */; };
+		587975512BAEA6EC00E28A31 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587975502BAEA6EC00E28A31 /* Vision.swift */; };
 		58A950552BAA724300D220C0 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 58A950542BAA724300D220C0 /* Camera-SwiftUI */; };
 		58A950582BAA724B00D220C0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A950572BAA724B00D220C0 /* CameraView.swift */; };
 /* End PBXBuildFile section */
@@ -24,7 +24,7 @@
 		58601EC72BA9D8FA0068B072 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58601EC92BA9D8FC0068B072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58601ECC2BA9D8FC0068B072 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		587975502BAEA6EC00E28A31 /* VisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionView.swift; sourceTree = "<group>"; };
+		587975502BAEA6EC00E28A31 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
 		58A950572BAA724B00D220C0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +63,7 @@
 			children = (
 				58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */,
 				58601EC72BA9D8FA0068B072 /* ContentView.swift */,
-				5879754F2BAEA6B200E28A31 /* VisionKit */,
+				5879754F2BAEA6B200E28A31 /* Vision */,
 				58A950562BAA724700D220C0 /* Component */,
 				58601EC92BA9D8FC0068B072 /* Assets.xcassets */,
 				58601ECB2BA9D8FC0068B072 /* Preview Content */,
@@ -79,12 +79,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5879754F2BAEA6B200E28A31 /* VisionKit */ = {
+		5879754F2BAEA6B200E28A31 /* Vision */ = {
 			isa = PBXGroup;
 			children = (
-				587975502BAEA6EC00E28A31 /* VisionView.swift */,
+				587975502BAEA6EC00E28A31 /* Vision.swift */,
 			);
-			path = VisionKit;
+			path = Vision;
 			sourceTree = "<group>";
 		};
 		58A950562BAA724700D220C0 /* Component */ = {
@@ -176,7 +176,7 @@
 			files = (
 				58A950582BAA724B00D220C0 /* CameraView.swift in Sources */,
 				58601EC82BA9D8FA0068B072 /* ContentView.swift in Sources */,
-				587975512BAEA6EC00E28A31 /* VisionView.swift in Sources */,
+				587975512BAEA6EC00E28A31 /* Vision.swift in Sources */,
 				58601EC62BA9D8FA0068B072 /* SafeCheckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
