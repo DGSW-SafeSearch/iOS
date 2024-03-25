@@ -1,4 +1,7 @@
 import SwiftUI
+import Alamofire
+import GoogleSignIn
+import GoogleSignInSwift
 
 struct ContentView: View {
     @ObservedObject private var vision = Vision()
@@ -8,11 +11,12 @@ struct ContentView: View {
     
     
     var body: some View {
-        Button{
+        GoogleSignInButton {
+            handleSignInButton()
+            login()
             isPresent.toggle()
-        } label: {
-            Text("로그인")
         }
+        .padding()
         .fullScreenCover(isPresented: $isPresent) {
             VStack {
                 if let image {
@@ -39,6 +43,45 @@ struct ContentView: View {
                 CameraView($image)
             }
         }
+    }
+    
+    @State var google: GoogleModel?
+    
+    func login() {
+        AF.request("http://10.80.163.32:8082/auth/google")
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success(let data):
+                    do {
+                        let responseData = try JSONDecoder().decode(GoogleModel.self, from: data)
+                        self.google = responseData
+                    } catch {
+                        print(error)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
+    func handleSignInButton() {
+        var rootViewController: UIViewController {
+            if let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let root = screen.windows.first?.rootViewController {
+                return root
+            } else {
+                return .init()
+            }
+        }
+        
+        GIDSignIn.sharedInstance.signIn(
+            withPresenting: rootViewController) { signInResult, error in
+                guard signInResult != nil else { return }
+                let user = signInResult?.user
+                _ = user?.profile?.email
+                _ = user?.profile?.name
+            }
     }
 }
 
