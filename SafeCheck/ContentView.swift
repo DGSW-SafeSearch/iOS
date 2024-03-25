@@ -4,7 +4,7 @@ struct ContentView: View {
     @ObservedObject private var vision = Vision()
     @State var isPresent: Bool = false
     @State var isPresented: Bool = false
-    @Binding var image: UIImage?
+    @State var image: UIImage?
     
     
     var body: some View {
