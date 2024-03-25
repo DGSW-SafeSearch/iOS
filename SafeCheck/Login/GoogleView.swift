@@ -1,8 +1,9 @@
-//
-//  Google.swift
-//  SafeCheck
-//
-//  Created by 조근호 on 3/25/24.
-//
+import SwiftUI
+import GoogleSignIn
+import GoogleSignInSwift
 
-import Foundation
+struct GoogleView: View {
+    var body: some View {
+        Text("A")
+    }
+}
