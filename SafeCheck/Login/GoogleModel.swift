@@ -1,5 +1,5 @@
 import Foundation
 
 struct GoogleModel: Codable {
-    let gameDuration: Double
+    let log: Bool
 }
