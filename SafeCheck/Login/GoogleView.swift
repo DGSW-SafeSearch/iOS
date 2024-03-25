@@ -7,4 +7,8 @@ struct GoogleView: View {
     var body: some View {
         Text("A")
     }
+    
+    func login() {
+        
+    }
 }
