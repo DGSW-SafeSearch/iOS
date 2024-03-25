@@ -5,21 +5,20 @@ import GoogleSignInSwift
 
 struct ContentView: View {
     @ObservedObject private var vision = Vision()
+    @State var google: GoogleModel?
     @State var isPresent: Bool = false
     @State var isPresented: Bool = false
     @State var image: UIImage?
-    
     
     var body: some View {
         GoogleSignInButton {
             handleSignInButton()
             login()
-            isPresent.toggle()
         }
         .padding()
         .fullScreenCover(isPresented: $isPresent) {
             VStack {
-                if let image {
+                if let image = image {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
@@ -31,24 +30,25 @@ struct ContentView: View {
                 Text(vision.OCRString ?? "오류")
                 
                 HStack {
-                    Button {
+                    Button("사진") {
                         isPresented.toggle()
-                    } label: {
-                        Text("사진")
                     }
-                    
                 }
             }
             .fullScreenCover(isPresented: $isPresented) {
                 CameraView($image)
             }
+            .onChange(of: image) { _ in
+                if let image = image {
+                    vision.reText(image: image)
+                }
+            }
         }
     }
     
-    @State var google: GoogleModel?
-    
     func login() {
         AF.request("http://10.80.163.32:8082/auth/google")
+        { $0.timeoutInterval = 60 }
             .validate()
             .responseData { response in
                 switch response.result {
@@ -75,13 +75,11 @@ struct ContentView: View {
             }
         }
         
-        GIDSignIn.sharedInstance.signIn(
-            withPresenting: rootViewController) { signInResult, error in
-                guard signInResult != nil else { return }
-                let user = signInResult?.user
-                _ = user?.profile?.email
-                _ = user?.profile?.name
-            }
+        GIDSignIn.sharedInstance.signIn( withPresenting: rootViewController ) { signInResult, error in
+            guard signInResult != nil else { return }
+            let user = signInResult?.user
+            _ = user?.profile?.email
+            _ = user?.profile?.name
+        }
     }
 }
-
