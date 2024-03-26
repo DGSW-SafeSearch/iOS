@@ -22,6 +22,7 @@ class Google: ObservableObject {
             let user = signInResult.user
             let idToken = user.idToken
             print(idToken!)
+      
         }
     }
     
@@ -31,7 +32,7 @@ class Google: ObservableObject {
             "idToken" : idToken
         ]
         
-        AF.request("",
+        AF.request("http://10.80.163.106:8082/auth/google",
                     method: .post,
                     parameters: query,
                     encoding: JSONEncoding.default)
