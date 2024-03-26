@@ -19,6 +19,7 @@
 		58C194D62BB158DA00F48D1D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 58C194D52BB158DA00F48D1D /* Alamofire */; };
 		58E74FF02BB25DE400BFA411 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E74FEF2BB25DE400BFA411 /* Google.swift */; };
 		58E74FF32BB2BDE800BFA411 /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E74FF22BB2BDE800BFA411 /* Apple.swift */; };
+		58E74FF62BB2E0DB00BFA411 /* Kakao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E74FF52BB2E0DB00BFA411 /* Kakao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		58C194DB2BB16BAE00F48D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		58E74FEF2BB25DE400BFA411 /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
 		58E74FF22BB2BDE800BFA411 /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
+		58E74FF52BB2E0DB00BFA411 /* Kakao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kakao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +85,9 @@
 			children = (
 				58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */,
 				58601EC72BA9D8FA0068B072 /* ContentView.swift */,
-				58E74FF12BB2BDD200BFA411 /* Apple */,
+				58E74FF42BB2E0B300BFA411 /* Kakao */,
 				58E74FEE2BB25DCB00BFA411 /* Google */,
+				58E74FF12BB2BDD200BFA411 /* Apple */,
 				5879754F2BAEA6B200E28A31 /* Vision */,
 				58A950562BAA724700D220C0 /* Component */,
 				58601EC92BA9D8FC0068B072 /* Assets.xcassets */,
@@ -132,6 +135,14 @@
 				58E74FF22BB2BDE800BFA411 /* Apple.swift */,
 			);
 			path = Apple;
+			sourceTree = "<group>";
+		};
+		58E74FF42BB2E0B300BFA411 /* Kakao */ = {
+			isa = PBXGroup;
+			children = (
+				58E74FF52BB2E0DB00BFA411 /* Kakao.swift */,
+			);
+			path = Kakao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58E74FF32BB2BDE800BFA411 /* Apple.swift in Sources */,
+				58E74FF62BB2E0DB00BFA411 /* Kakao.swift in Sources */,
 				58A950582BAA724B00D220C0 /* CameraView.swift in Sources */,
 				58601EC82BA9D8FA0068B072 /* ContentView.swift in Sources */,
 				587975512BAEA6EC00E28A31 /* Vision.swift in Sources */,
