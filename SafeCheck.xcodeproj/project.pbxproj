@@ -10,7 +10,6 @@
 		5805AA7E2BB0FA6C00CBE35E /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5805AA7D2BB0FA6C00CBE35E /* Camera-SwiftUI */; };
 		5805AA802BB0FAFE00CBE35E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5805AA7F2BB0FAFE00CBE35E /* GoogleSignIn */; };
 		5805AA822BB0FAFE00CBE35E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5805AA812BB0FAFE00CBE35E /* GoogleSignInSwift */; };
-		58128C8C2BB137C4004EA2F4 /* GoogleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58128C8B2BB137C4004EA2F4 /* GoogleModel.swift */; };
 		58601EC62BA9D8FA0068B072 /* SafeCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */; };
 		58601EC82BA9D8FA0068B072 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58601EC72BA9D8FA0068B072 /* ContentView.swift */; };
 		58601ECA2BA9D8FC0068B072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58601EC92BA9D8FC0068B072 /* Assets.xcassets */; };
@@ -18,6 +17,7 @@
 		587975512BAEA6EC00E28A31 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587975502BAEA6EC00E28A31 /* Vision.swift */; };
 		58A950582BAA724B00D220C0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A950572BAA724B00D220C0 /* CameraView.swift */; };
 		58C194D62BB158DA00F48D1D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 58C194D52BB158DA00F48D1D /* Alamofire */; };
+		58E74FF02BB25DE400BFA411 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E74FEF2BB25DE400BFA411 /* Google.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +34,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		58128C8B2BB137C4004EA2F4 /* GoogleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleModel.swift; sourceTree = "<group>"; };
 		58601EC22BA9D8FA0068B072 /* SafeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCheckApp.swift; sourceTree = "<group>"; };
 		58601EC72BA9D8FA0068B072 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +42,7 @@
 		587975502BAEA6EC00E28A31 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
 		58A950572BAA724B00D220C0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		58C194DB2BB16BAE00F48D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		58E74FEF2BB25DE400BFA411 /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +60,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5805AA832BB1195900CBE35E /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				58128C8B2BB137C4004EA2F4 /* GoogleModel.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		58601EB92BA9D8FA0068B072 = {
 			isa = PBXGroup;
 			children = (
@@ -87,13 +79,13 @@
 		58601EC42BA9D8FA0068B072 /* SafeCheck */ = {
 			isa = PBXGroup;
 			children = (
-				58C194DB2BB16BAE00F48D1D /* Info.plist */,
 				58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */,
 				58601EC72BA9D8FA0068B072 /* ContentView.swift */,
-				5805AA832BB1195900CBE35E /* Login */,
+				58E74FEE2BB25DCB00BFA411 /* Google */,
 				5879754F2BAEA6B200E28A31 /* Vision */,
 				58A950562BAA724700D220C0 /* Component */,
 				58601EC92BA9D8FC0068B072 /* Assets.xcassets */,
+				58C194DB2BB16BAE00F48D1D /* Info.plist */,
 				58601ECB2BA9D8FC0068B072 /* Preview Content */,
 			);
 			path = SafeCheck;
@@ -121,6 +113,14 @@
 				58A950572BAA724B00D220C0 /* CameraView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		58E74FEE2BB25DCB00BFA411 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				58E74FEF2BB25DE400BFA411 /* Google.swift */,
+			);
+			path = Google;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,10 +205,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58128C8C2BB137C4004EA2F4 /* GoogleModel.swift in Sources */,
 				58A950582BAA724B00D220C0 /* CameraView.swift in Sources */,
 				58601EC82BA9D8FA0068B072 /* ContentView.swift in Sources */,
 				587975512BAEA6EC00E28A31 /* Vision.swift in Sources */,
+				58E74FF02BB25DE400BFA411 /* Google.swift in Sources */,
 				58601EC62BA9D8FA0068B072 /* SafeCheckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
