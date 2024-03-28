@@ -2,11 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -17,6 +12,7 @@
 				<string>com.googleusercontent.apps.350132665143-ffp2s1tm0lvo6pkhkncf4nk50l5icqpk</string>
 			</array>
 		</dict>
+		<dict/>
 	</array>
 	<key>GIDClientID</key>
 	<string>350132665143-ffp2s1tm0lvo6pkhkncf4nk50l5icqpk.apps.googleusercontent.com</string>

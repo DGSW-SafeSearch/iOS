@@ -64,6 +64,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5836093F2BB3BC6D007ADC9B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				58E74FF42BB2E0B300BFA411 /* Kakao */,
+				58E74FEE2BB25DCB00BFA411 /* Google */,
+				58E74FF12BB2BDD200BFA411 /* Apple */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		583609402BB413DC007ADC9B /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				5879754F2BAEA6B200E28A31 /* Vision */,
+				58A950562BAA724700D220C0 /* Component */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		583609412BB413F6007ADC9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				58601EC72BA9D8FA0068B072 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		58601EB92BA9D8FA0068B072 = {
 			isa = PBXGroup;
 			children = (
@@ -84,12 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */,
-				58601EC72BA9D8FA0068B072 /* ContentView.swift */,
-				58E74FF42BB2E0B300BFA411 /* Kakao */,
-				58E74FEE2BB25DCB00BFA411 /* Google */,
-				58E74FF12BB2BDD200BFA411 /* Apple */,
-				5879754F2BAEA6B200E28A31 /* Vision */,
-				58A950562BAA724700D220C0 /* Component */,
+				583609412BB413F6007ADC9B /* View */,
+				583609402BB413DC007ADC9B /* New Group */,
+				5836093F2BB3BC6D007ADC9B /* Login */,
 				58601EC92BA9D8FC0068B072 /* Assets.xcassets */,
 				58C194DB2BB16BAE00F48D1D /* Info.plist */,
 				58601ECB2BA9D8FC0068B072 /* Preview Content */,
@@ -200,6 +224,7 @@
 				58A950532BAA724300D220C0 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
 				5879754A2BAEA35100E28A31 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				58128C842BB136E4004EA2F4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				58E74FF72BB2E1C500BFA411 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
 			productRefGroup = 58601EC32BA9D8FA0068B072 /* Products */;
 			projectDirPath = "";
@@ -469,6 +494,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.5.0;
+			};
+		};
+		58E74FF72BB2E1C500BFA411 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.22.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
