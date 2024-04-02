@@ -16,10 +16,10 @@
 		58601ECD2BA9D8FC0068B072 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58601ECC2BA9D8FC0068B072 /* Preview Assets.xcassets */; };
 		587975512BAEA6EC00E28A31 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587975502BAEA6EC00E28A31 /* Vision.swift */; };
 		58A950582BAA724B00D220C0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A950572BAA724B00D220C0 /* CameraView.swift */; };
+		58B903462BBBF78F00C83BB0 /* SafeCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B903452BBBF78F00C83BB0 /* SafeCheckModel.swift */; };
 		58C194D62BB158DA00F48D1D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 58C194D52BB158DA00F48D1D /* Alamofire */; };
 		58E74FF02BB25DE400BFA411 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E74FEF2BB25DE400BFA411 /* Google.swift */; };
 		58E74FF32BB2BDE800BFA411 /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E74FF22BB2BDE800BFA411 /* Apple.swift */; };
-		58E74FF62BB2E0DB00BFA411 /* Kakao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E74FF52BB2E0DB00BFA411 /* Kakao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,10 +43,10 @@
 		58601ECC2BA9D8FC0068B072 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		587975502BAEA6EC00E28A31 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
 		58A950572BAA724B00D220C0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		58C194DB2BB16BAE00F48D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		58B903452BBBF78F00C83BB0 /* SafeCheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCheckModel.swift; sourceTree = "<group>"; };
+		58DE03752BB59190009DA520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58E74FEF2BB25DE400BFA411 /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
 		58E74FF22BB2BDE800BFA411 /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
-		58E74FF52BB2E0DB00BFA411 /* Kakao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kakao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,20 +67,20 @@
 		5836093F2BB3BC6D007ADC9B /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				58E74FF42BB2E0B300BFA411 /* Kakao */,
 				58E74FEE2BB25DCB00BFA411 /* Google */,
 				58E74FF12BB2BDD200BFA411 /* Apple */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		583609402BB413DC007ADC9B /* New Group */ = {
+		583609402BB413DC007ADC9B /* State */ = {
 			isa = PBXGroup;
 			children = (
+				5836093F2BB3BC6D007ADC9B /* Login */,
 				5879754F2BAEA6B200E28A31 /* Vision */,
 				58A950562BAA724700D220C0 /* Component */,
 			);
-			path = "New Group";
+			path = State;
 			sourceTree = "<group>";
 		};
 		583609412BB413F6007ADC9B /* View */ = {
@@ -111,11 +111,11 @@
 			isa = PBXGroup;
 			children = (
 				58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */,
+				58B903472BBBF7B400C83BB0 /* Model */,
 				583609412BB413F6007ADC9B /* View */,
-				583609402BB413DC007ADC9B /* New Group */,
-				5836093F2BB3BC6D007ADC9B /* Login */,
+				583609402BB413DC007ADC9B /* State */,
 				58601EC92BA9D8FC0068B072 /* Assets.xcassets */,
-				58C194DB2BB16BAE00F48D1D /* Info.plist */,
+				58DE03752BB59190009DA520 /* Info.plist */,
 				58601ECB2BA9D8FC0068B072 /* Preview Content */,
 			);
 			path = SafeCheck;
@@ -145,6 +145,14 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		58B903472BBBF7B400C83BB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				58B903452BBBF78F00C83BB0 /* SafeCheckModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		58E74FEE2BB25DCB00BFA411 /* Google */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,14 +167,6 @@
 				58E74FF22BB2BDE800BFA411 /* Apple.swift */,
 			);
 			path = Apple;
-			sourceTree = "<group>";
-		};
-		58E74FF42BB2E0B300BFA411 /* Kakao */ = {
-			isa = PBXGroup;
-			children = (
-				58E74FF52BB2E0DB00BFA411 /* Kakao.swift */,
-			);
-			path = Kakao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,10 +253,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				58E74FF32BB2BDE800BFA411 /* Apple.swift in Sources */,
-				58E74FF62BB2E0DB00BFA411 /* Kakao.swift in Sources */,
 				58A950582BAA724B00D220C0 /* CameraView.swift in Sources */,
 				58601EC82BA9D8FA0068B072 /* ContentView.swift in Sources */,
 				587975512BAEA6EC00E28A31 /* Vision.swift in Sources */,
+				58B903462BBBF78F00C83BB0 /* SafeCheckModel.swift in Sources */,
 				58E74FF02BB25DE400BFA411 /* Google.swift in Sources */,
 				58601EC62BA9D8FA0068B072 /* SafeCheckApp.swift in Sources */,
 			);

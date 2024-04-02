@@ -52,7 +52,3 @@ class Google: ObservableObject {
         
     }
 }
-
-struct Login: Codable {
-    let newUser: String
-}

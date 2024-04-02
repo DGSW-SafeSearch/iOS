@@ -10,12 +10,12 @@ struct ContentView: View {
     @State var image: UIImage?
     
     var body: some View {
-        GoogleSignInButton {
-            google.handleSignInButton()
-        }
-        .padding()
-        .fullScreenCover(isPresented: $isPresent) {
-            VStack {
+        VStack {
+//            GoogleSignInButton {
+//                google.handleSignInButton()
+//            }
+//            .padding()
+//            .fullScreenCover(isPresented: $isPresent) {
                 if let image = image {
                     Image(uiImage: image)
                         .resizable()
@@ -25,7 +25,7 @@ struct ContentView: View {
                         }
                 }
                 
-                Text(vision.OCRString ?? "오류")
+            Text(vision.casNumber ?? "__empty__")
                 
                 HStack {
                     Button("사진") {
@@ -39,9 +39,10 @@ struct ContentView: View {
                             vision.reText(image: image)
                         }
                     }
-                    
+                    Button("으야") {
+                        vision.information(image: image!)
+                    }
                 }
             }
         }
-    }
 }
