@@ -44,4 +44,33 @@ class Vision: ObservableObject {
             print("dmdi")
         }
     }
+    
+    func information(image: UIImage) {
+        let query : Parameters = [
+            "user_id" : user_id,
+            "ocr_text" : ocrString ?? "__empty__",
+            "ocr_cas" : casNumber ?? "__empty__",
+            "ocr_un" : unNumber ?? "__empty__",
+            "file_name" : image
+        ]
+        
+        AF.request("http://10.80.162.154:8082/ocr/process/",
+                   method: .post,
+                   parameters: query,
+                   encoding: JSONEncoding.default)
+        .responseData { response in
+            switch response.result {
+            case .success(let data):
+                do { 
+                    let responseData = try JSONDecoder().decode(Information.self, from: data)
+                    self.information = responseData
+                    print(responseData)
+                } catch {
+                    print(error)
+                }
+            case .failure(let error): 
+                print(error)
+            }
+        }
+    }
 }
