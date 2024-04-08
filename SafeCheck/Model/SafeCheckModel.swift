@@ -12,6 +12,6 @@ struct Information: Codable {
 }
 
 struct Islogined: Codable {
-    let signup: String?
+    let message: String?
     let userId: Int64?
 }

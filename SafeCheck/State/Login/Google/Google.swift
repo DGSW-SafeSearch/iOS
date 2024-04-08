@@ -18,16 +18,11 @@ class Google: ObservableObject {
             }
         }
         
-        GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController ) { signInResult, error in
+        GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController ) { [self] signInResult, error in
             guard let signInResult = signInResult else { return }
             let user = signInResult.user
             self.mail = user.profile?.email ?? ""
             self.isLogined()
-            if self.logined?.signup != nil {
-                print("회원가입 X")
-            } else {
-                self.login()
-            }
         }
     }
     
@@ -38,9 +33,8 @@ class Google: ObservableObject {
         
         AF.request("\(url)/auth/signup/google/IOS",
                    method: .post,
-                   parameters: query,
-                   encoding: JSONEncoding.default)
-        { $0.timeoutInterval = 60 }
+                   parameters: query)
+        
         .responseData { response in
             switch response.result {
             case .success(let data):
@@ -57,13 +51,25 @@ class Google: ObservableObject {
     }
     
     func isLogined() {
-        AF.request("\(url)/auth?emailAddress=\(mail)")
+        let query: Parameters = [
+            "emailAddress": mail
+        ]
+        
+        AF.request("\(url)/auth",
+                   method: .get,
+                   parameters: query)
         .responseData { response in
             switch response.result {
             case .success(let data):
                 do {
                     let responseData = try JSONDecoder().decode(Islogined.self, from: data)
                     self.logined = responseData
+                    if let message = self.logined?.message, message == "signup" {
+                        print("회원가입 필요")
+                        self.login()
+                    } else {
+                        print("회원가입 X")
+                    }
                 } catch {
                     print(error)
                 }
