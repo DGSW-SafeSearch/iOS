@@ -5,17 +5,16 @@ import GoogleSignInSwift
 struct ContentView: View {
     @ObservedObject private var vision = Vision()
     @ObservedObject private var google = Google()
-    @State var isPresent: Bool = false
     @State var isPresented: Bool = false
     @State var image: UIImage?
     
     var body: some View {
         VStack {
-//            GoogleSignInButton {
-//                google.handleSignInButton()
-//            }
-//            .padding()
-//            .fullScreenCover(isPresented: $isPresent) {
+            GoogleSignInButton {
+                google.handleSignInButton()
+            }
+            .padding()
+            .fullScreenCover(isPresented: $google.isPresent) {
                 if let image = image {
                     Image(uiImage: image)
                         .resizable()
@@ -25,7 +24,7 @@ struct ContentView: View {
                         }
                 }
                 
-            Text(vision.casNumber ?? "__empty__")
+                Text(vision.casNumber ?? "__empty__")
                 
                 HStack {
                     Button("사진") {
@@ -45,4 +44,5 @@ struct ContentView: View {
                 }
             }
         }
+    }
 }

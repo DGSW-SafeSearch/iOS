@@ -3,17 +3,15 @@ import VisionKit
 import Alamofire
 
 class Vision: ObservableObject {
+    @Published var googleLogin: Login?
     @Published var information: Information?
     @Published var ocrString: String?
     @Published var casNumber: String?
     @Published var unNumber: String?
-    @Published var user_id: String = "user_id"
     
     func reText(image: UIImage) {
         guard let Image = image.cgImage else { fatalError("이미지 오류") }
-        
         let handler = VNImageRequestHandler(cgImage: Image, options: [:])
-        
         let request = VNRecognizeTextRequest { [weak self] request, error in
             guard let result = request.results as? [VNRecognizedTextObservation],
                   error == nil else { return }
@@ -47,21 +45,20 @@ class Vision: ObservableObject {
     
     func information(image: UIImage) {
         let query : Parameters = [
-            "user_id" : user_id,
+            "user_id" : googleLogin?.userId ?? "__empty__",
             "ocr_text" : ocrString ?? "__empty__",
             "ocr_cas" : casNumber ?? "__empty__",
             "ocr_un" : unNumber ?? "__empty__",
-            "file_name" : image
         ]
         
-        AF.request("http://10.80.162.154:8082/ocr/process/",
+        AF.request("\(url)/ocr/process",
                    method: .post,
                    parameters: query,
                    encoding: JSONEncoding.default)
         .responseData { response in
             switch response.result {
             case .success(let data):
-                do { 
+                do {
                     let responseData = try JSONDecoder().decode(Information.self, from: data)
                     self.information = responseData
                     print(responseData)
