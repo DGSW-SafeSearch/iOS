@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580119012BC55737007B0D6A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580119002BC55737007B0D6A /* MainView.swift */; };
 		5805AA7E2BB0FA6C00CBE35E /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5805AA7D2BB0FA6C00CBE35E /* Camera-SwiftUI */; };
 		5805AA802BB0FAFE00CBE35E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5805AA7F2BB0FAFE00CBE35E /* GoogleSignIn */; };
 		5805AA822BB0FAFE00CBE35E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5805AA812BB0FAFE00CBE35E /* GoogleSignInSwift */; };
@@ -36,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		580119002BC55737007B0D6A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		58601EC22BA9D8FA0068B072 /* SafeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCheckApp.swift; sourceTree = "<group>"; };
 		58601EC72BA9D8FA0068B072 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				58601EC72BA9D8FA0068B072 /* ContentView.swift */,
+				580119002BC55737007B0D6A /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58E74FF32BB2BDE800BFA411 /* Apple.swift in Sources */,
+				580119012BC55737007B0D6A /* MainView.swift in Sources */,
 				58A950582BAA724B00D220C0 /* CameraView.swift in Sources */,
 				58601EC82BA9D8FA0068B072 /* ContentView.swift in Sources */,
 				587975512BAEA6EC00E28A31 /* Vision.swift in Sources */,

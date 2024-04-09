@@ -4,7 +4,6 @@ import GoogleSignInSwift
 
 class Google: ObservableObject {
     @Published var googleLogin: Login?
-    @Published var logined: Islogined?
     @Published var isPresent: Bool = false
     @Published var mail: String = ""
     
