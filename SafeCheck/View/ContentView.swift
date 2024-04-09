@@ -28,7 +28,9 @@ struct ContentView: View {
                         }
                 }
                 
+                Text(vision.ocrString ?? "__empty__")
                 Text(vision.casNumber ?? "__empty__")
+                Text(vision.unNumber ?? "__empty__")
                 
                 HStack {
                     Button("사진") {

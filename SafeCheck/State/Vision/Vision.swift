@@ -19,6 +19,7 @@ class Vision: ObservableObject {
                 .joined(separator: "\n")
             self?.ocrString = text
             self?.discriminatorCas()
+            self?.discriminatorUn()
         }
         do {
             print(try request.supportedRecognitionLanguages())
@@ -31,6 +32,21 @@ class Vision: ObservableObject {
     func discriminatorCas() {
         guard let ocrString = ocrString else { return }
         let pattern = "\\b\\d{1,}-\\d{2}-\\d{1}\\b"
+        guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else {
+            fatalError("dmdi")
+        }
+        let matches = regex.matches(in: ocrString, options: [], range: NSRange(location: 0, length: ocrString.utf16.count))
+        if let match = matches.first, let range = Range(match.range, in: ocrString) {
+            let unNumber = String(ocrString[range])
+            self.unNumber = unNumber
+        } else {
+            print("dmdi")
+        }
+    }
+    
+    func discriminatorUn() {
+        guard let ocrString = ocrString else { return }
+        let pattern = #"(?i)un\s?(\d{0,4})"#
         guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else {
             fatalError("dmdi")
         }
