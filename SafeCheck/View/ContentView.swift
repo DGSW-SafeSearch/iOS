@@ -14,6 +14,10 @@ struct ContentView: View {
                 google.handleSignInButton()
             }
             .padding()
+            
+            Button("A") {
+                google.isPresent.toggle()
+            }
             .fullScreenCover(isPresented: $google.isPresent) {
                 if let image = image {
                     Image(uiImage: image)
@@ -39,7 +43,7 @@ struct ContentView: View {
                         }
                     }
                     Button("으야") {
-                        vision.information(image: image!)
+                        vision.informationed()
                     }
                 }
             }

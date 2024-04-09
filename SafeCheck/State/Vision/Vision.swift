@@ -43,9 +43,9 @@ class Vision: ObservableObject {
         }
     }
     
-    func information(image: UIImage) {
+    func informationed() {
         let query : Parameters = [
-            "user_id" : googleLogin?.userId ?? "__empty__",
+            "requestUserId" : googleLogin?.userId ?? "__empty__",
             "ocr_text" : ocrString ?? "__empty__",
             "ocr_cas" : casNumber ?? "__empty__",
             "ocr_un" : unNumber ?? "__empty__",
@@ -59,6 +59,7 @@ class Vision: ObservableObject {
             switch response.result {
             case .success(let data):
                 do {
+                    print(String(decoding: data, as: UTF8.self))
                     let responseData = try JSONDecoder().decode(Information.self, from: data)
                     self.information = responseData
                     print(responseData)
