@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject private var vision = Vision()
+    @ObservedObject private var google = Google()
     @State var isPresented: Bool = false
     @State var image: UIImage?
     
@@ -14,6 +15,7 @@ struct MainView: View {
                     vision.reText(image: image)
                 }
         }
+        
         Text(vision.ocrString ?? "__empty__")
         Text(vision.casNumber ?? "__empty__")
         Text(vision.unNumber ?? "__empty__")
@@ -34,5 +36,9 @@ struct MainView: View {
                 vision.informationed()
             }
         }
+        Button("돌아가기") {
+           
+        }
+        .padding()
     }
 }

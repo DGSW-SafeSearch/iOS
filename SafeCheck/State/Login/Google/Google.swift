@@ -40,6 +40,7 @@ class Google: ObservableObject {
                     print(String(decoding: data, as: UTF8.self))
                     let responseData = try JSONDecoder().decode(Login.self, from: data)
                     self.googleLogin = responseData
+                    self.googleLogin!.saveUserIdToUserDefaults()
                     print(responseData)
                 } catch {
                     print(error)

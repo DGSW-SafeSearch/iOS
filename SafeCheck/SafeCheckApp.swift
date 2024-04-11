@@ -6,10 +6,14 @@ struct SafeCheckApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .onOpenURL { url in
-                    GIDSignIn.sharedInstance.handle(url)
-                }
+            if UserDefaults.standard.string(forKey: "user_id") != nil {
+                MainView()
+            } else {
+                ContentView()
+                    .onOpenURL { url in
+                        GIDSignIn.sharedInstance.handle(url)
+                    }
+            }
         }
     }
 }

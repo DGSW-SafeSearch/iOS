@@ -11,11 +11,7 @@ struct ContentView: View {
                 google.handleSignInButton()
             }
             .padding()
-            .fullScreenCover(isPresented: $google.isPresent) {
-                MainView()
-            }
-            let user_id = UserDefaults.standard.string(forKey: "user_id")
-            Text(user_id ?? "으야")
+            Text(UserDefaults.standard.string(forKey: "user_id") ?? "으야")
         }
     }
 }
