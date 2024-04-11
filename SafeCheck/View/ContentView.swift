@@ -14,6 +14,8 @@ struct ContentView: View {
             .fullScreenCover(isPresented: $google.isPresent) {
                 MainView()
             }
+            let user_id = UserDefaults.standard.string(forKey: "user_id")
+            Text(user_id ?? "으야")
         }
     }
 }

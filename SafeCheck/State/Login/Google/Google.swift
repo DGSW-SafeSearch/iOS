@@ -29,7 +29,7 @@ class Google: ObservableObject {
             "emailAddress" : mail
         ]
         
-        AF.request("\(url)/auth/signup/google/IOS",
+        AF.request("\(url)/auth/google/ios",
                    method: .post,
                    parameters: query)
         
@@ -37,8 +37,10 @@ class Google: ObservableObject {
             switch response.result {
             case .success(let data):
                 do {
+                    print(String(decoding: data, as: UTF8.self))
                     let responseData = try JSONDecoder().decode(Login.self, from: data)
                     self.googleLogin = responseData
+                    print(responseData)
                 } catch {
                     print(error)
                 }

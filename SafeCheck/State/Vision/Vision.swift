@@ -3,7 +3,7 @@ import VisionKit
 import Alamofire
 
 class Vision: ObservableObject {
-    @Published var googleLogin: Login?
+    @Published var login: Login?
     @Published var information: Information?
     @Published var ocrString: String?
     @Published var casNumber: String?
@@ -61,7 +61,7 @@ class Vision: ObservableObject {
     
     func informationed() {
         let query : Parameters = [
-            "requestUserId" : googleLogin?.userId ?? "__empty__",
+            "requestUserId" : login?.user_id ?? "__empty__",
             "ocr_text" : ocrString ?? "__empty__",
             "ocr_cas" : casNumber ?? "__empty__",
             "ocr_un" : unNumber ?? "__empty__",
