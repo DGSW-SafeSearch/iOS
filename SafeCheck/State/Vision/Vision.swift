@@ -37,8 +37,8 @@ class Vision: ObservableObject {
         }
         let matches = regex.matches(in: ocrString, options: [], range: NSRange(location: 0, length: ocrString.utf16.count))
         if let match = matches.first, let range = Range(match.range, in: ocrString) {
-            let unNumber = String(ocrString[range])
-            self.unNumber = unNumber
+            let casNumber = String(ocrString[range])
+            self.casNumber = casNumber
         } else {
             print("dmdi")
         }
@@ -52,8 +52,8 @@ class Vision: ObservableObject {
         }
         let matches = regex.matches(in: ocrString, options: [], range: NSRange(location: 0, length: ocrString.utf16.count))
         if let match = matches.first, let range = Range(match.range, in: ocrString) {
-            let casNumber = String(ocrString[range])
-            self.casNumber = casNumber
+            let unNumber = String(ocrString[range])
+            self.unNumber = unNumber
         } else {
             print("dmdi")
         }
@@ -61,7 +61,7 @@ class Vision: ObservableObject {
     
     func informationed() {
         let query : Parameters = [
-            "requestUserId" : login?.user_id ?? "__empty__",
+            "requestUserId" : UserDefaults.standard.string(forKey: "user_id") ?? "__empty__",
             "ocr_text" : ocrString ?? "__empty__",
             "ocr_cas" : casNumber ?? "__empty__",
             "ocr_un" : unNumber ?? "__empty__",

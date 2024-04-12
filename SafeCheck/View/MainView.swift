@@ -4,6 +4,7 @@ struct MainView: View {
     @ObservedObject private var vision = Vision()
     @ObservedObject private var google = Google()
     @State var isPresented: Bool = false
+    @State var isPresent: Bool = false
     @State var image: UIImage?
     
     var body: some View {
@@ -15,13 +16,11 @@ struct MainView: View {
                     vision.reText(image: image)
                 }
         }
-        
-        Text(vision.ocrString ?? "__empty__")
         Text(vision.casNumber ?? "__empty__")
         Text(vision.unNumber ?? "__empty__")
         
         HStack {
-            Button("사진") {
+            Button("사진 찍기") {
                 isPresented.toggle()
             }
             .fullScreenCover(isPresented: $isPresented) {
@@ -32,13 +31,21 @@ struct MainView: View {
                     vision.reText(image: image)
                 }
             }
-            Button("으야") {
+            .padding()
+            
+            Button("서버 통신") {
                 vision.informationed()
             }
+            .padding()
         }
+        
         Button("돌아가기") {
-           
+            UserDefaults.standard.removeObject(forKey: "user_id")
+            isPresent.toggle()
         }
         .padding()
+        .fullScreenCover(isPresented: $isPresent) {
+            ContentView()
+        }
     }
 }
