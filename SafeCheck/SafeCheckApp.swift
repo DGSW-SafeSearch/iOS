@@ -9,7 +9,7 @@ struct SafeCheckApp: App {
             if UserDefaults.standard.string(forKey: "user_id") != nil {
                 MainView()
             } else {
-                ContentView()
+                LoginView()
                     .onOpenURL { url in
                         GIDSignIn.sharedInstance.handle(url)
                     }

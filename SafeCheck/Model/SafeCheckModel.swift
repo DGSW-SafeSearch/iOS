@@ -1,12 +1,12 @@
 import Foundation
 
-let url = "http://10.80.162.186:8082"
+let url = "http://10.80.162.186:8084"
 
 struct user_entity: Codable {
     let user_type: String
 }
 
-struct Login: Codable {
+struct logined: Codable {
     let user_entity: user_entity
     let user_id: String?
     let res: String
@@ -18,7 +18,7 @@ struct Login: Codable {
     }
 }
 
-struct Information: Codable {
+struct informations: Codable {
     let chemical_substance: chemical_substance
     let chemical_id: String?
 

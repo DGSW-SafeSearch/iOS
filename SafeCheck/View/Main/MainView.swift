@@ -16,6 +16,7 @@ struct MainView: View {
                     vision.reText(image: image)
                 }
         }
+        Text(vision.ocrString ?? "__empty__")
         Text(vision.casNumber ?? "__empty__")
         Text(vision.unNumber ?? "__empty__")
         
@@ -45,7 +46,7 @@ struct MainView: View {
         }
         .padding()
         .fullScreenCover(isPresented: $isPresent) {
-            ContentView()
+            LoginView()
         }
     }
 }

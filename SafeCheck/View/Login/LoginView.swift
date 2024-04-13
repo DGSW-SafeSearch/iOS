@@ -2,7 +2,7 @@ import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
 
-struct ContentView: View {
+struct LoginView: View {
     @ObservedObject private var google = Google()
     
     var body: some View {

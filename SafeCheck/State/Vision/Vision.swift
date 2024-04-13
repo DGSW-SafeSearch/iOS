@@ -3,8 +3,8 @@ import VisionKit
 import Alamofire
 
 class Vision: ObservableObject {
-    @Published var login: Login?
-    @Published var information: Information?
+    @Published var login: logined?
+    @Published var information: informations?
     @Published var ocrString: String?
     @Published var casNumber: String?
     @Published var unNumber: String?
@@ -46,12 +46,12 @@ class Vision: ObservableObject {
     
     func discriminatorUn() {
         guard let ocrString = ocrString else { return }
-        let pattern = #"(?i)un\s?(\d{0,4})"#
+        let pattern = #"UN:\s*(\d+)"#
         guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else {
             fatalError("dmdi")
         }
         let matches = regex.matches(in: ocrString, options: [], range: NSRange(location: 0, length: ocrString.utf16.count))
-        if let match = matches.first, let range = Range(match.range, in: ocrString) {
+        if let match = matches.first, let range = Range(match.range(at: 1), in: ocrString) {
             let unNumber = String(ocrString[range])
             self.unNumber = unNumber
         } else {
@@ -76,7 +76,7 @@ class Vision: ObservableObject {
             case .success(let data):
                 do {
                     print(String(decoding: data, as: UTF8.self))
-                    let responseData = try JSONDecoder().decode(Information.self, from: data)
+                    let responseData = try JSONDecoder().decode(informations.self, from: data)
                     self.information = responseData
                     print(responseData)
                 } catch {

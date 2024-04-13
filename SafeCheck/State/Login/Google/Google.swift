@@ -3,7 +3,7 @@ import GoogleSignIn
 import GoogleSignInSwift
 
 class Google: ObservableObject {
-    @Published var googleLogin: Login?
+    @Published var googleLogin: logined?
     @Published var isPresent: Bool = false
     @Published var mail: String = ""
     
@@ -38,7 +38,7 @@ class Google: ObservableObject {
             case .success(let data):
                 do {
                     print(String(decoding: data, as: UTF8.self))
-                    let responseData = try JSONDecoder().decode(Login.self, from: data)
+                    let responseData = try JSONDecoder().decode(logined.self, from: data)
                     self.googleLogin = responseData
                     self.googleLogin!.saveUserIdToUserDefaults()
                     if UserDefaults.standard.string(forKey: "user_id") != nil {
