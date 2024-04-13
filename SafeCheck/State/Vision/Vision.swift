@@ -87,4 +87,8 @@ class Vision: ObservableObject {
             }
         }
     }
+    
+    func informationedImage() {
+            
+       }
 }
