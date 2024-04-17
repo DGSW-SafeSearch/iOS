@@ -1,3 +1,4 @@
+import SwiftUI
 import Vision
 import VisionKit
 import Alamofire
@@ -46,7 +47,7 @@ class Vision: ObservableObject {
     
     func discriminatorUn() {
         guard let ocrString = ocrString else { return }
-        let pattern = #"UN:\s*(\d+)"#
+        let pattern = #"UN(?::)?\s*(\d+)"#
         guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else {
             fatalError("dmdi")
         }
@@ -82,13 +83,38 @@ class Vision: ObservableObject {
                 } catch {
                     print(error)
                 }
-            case .failure(let error): 
+            case .failure(let error):
                 print(error)
             }
         }
     }
     
-    func informationedImage() {
-            
-       }
+    func informationedImage(image: UIImage) {
+        guard let imageData = image.jpegData(compressionQuality: 1.0) else { return }
+        
+        let query : Parameters = [
+            "requestUserId" : UserDefaults.standard.string(forKey: "user_id") ?? "__empty__",
+            "image" : imageData
+        ]
+        
+        AF.upload(multipartFormData: { multipartFormData in
+            for (key, value) in query {
+                if let data = value as? Data {
+                    multipartFormData.append(data, withName: key, fileName: "image.jpg", mimeType: "image/jpeg")
+                } else {
+                    if let stringValue = value as? String {
+                        multipartFormData.append(stringValue.data(using: .utf8)!, withName: key)
+                    }
+                }
+            }
+        }, to: "\(url)/ocr")
+        .responseData { response in
+            switch response.result {
+            case .success(let data):
+                print(String(decoding: data, as: UTF8.self))
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }

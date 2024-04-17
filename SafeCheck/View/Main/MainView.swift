@@ -8,45 +8,74 @@ struct MainView: View {
     @State var image: UIImage?
     
     var body: some View {
-        if let image = image {
-            Image(uiImage: image)
-                .resizable()
-                .scaledToFit()
-                .onAppear {
-                    vision.reText(image: image)
+        ZStack {
+            Color("mainColor")
+                .ignoresSafeArea()
+            VStack {
+                Image("main")
+                    .padding(20)
+                Text("CAS번호 검색")
+                    .font(.title2)
+                    .padding(.top,20)
+                
+                Button(action: {
+                    isPresented.toggle()
+                }) {
+                    VStack {
+                        Image("camera")
+                            .padding(10)
+                        Text("사진 촬영")
+                            .font(.title3)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: 170)
+                    .background(Color.white)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 3)
+                            .stroke(Color.gray, lineWidth: 0.5)
+                    )
                 }
-        }
-        Text(vision.ocrString ?? "__empty__")
-        Text(vision.casNumber ?? "__empty__")
-        Text(vision.unNumber ?? "__empty__")
-        
-        HStack {
-            Button("사진 찍기") {
-                isPresented.toggle()
-            }
-            .fullScreenCover(isPresented: $isPresented) {
-                CameraView($image)
-            }
-            .onChange(of: image) { _ in
-                if let image = image {
-                    vision.reText(image: image)
+                .buttonStyle(PlainButtonStyle())
+                .fullScreenCover(isPresented: $isPresented) {
+                    CameraView($image)
                 }
+                .onChange(of: image) { _ in
+                    if let image = image {
+                        vision.reText(image: image)
+                    }
+                }
+                .padding()
+                
+                Image("logo")
+                
+                Text("* 세이프서치의 CAS 번호 정보는\n화학물질정보처리시스템에서 제공하는 내용입니다.")
+                
+                Button("돌아가기") {
+                    UserDefaults.standard.removeObject(forKey: "user_id")
+                    isPresent.toggle()
+                }
+                .padding()
+                .fullScreenCover(isPresented: $isPresent) {
+                    LoginView()
+                }
+                Spacer()
+                Image("footer")
+                    .padding()
             }
-            .padding()
-            
-            Button("서버 통신") {
-                vision.informationed()
-            }
-            .padding()
-        }
-        
-        Button("돌아가기") {
-            UserDefaults.standard.removeObject(forKey: "user_id")
-            isPresent.toggle()
-        }
-        .padding()
-        .fullScreenCover(isPresented: $isPresent) {
-            LoginView()
         }
     }
 }
+
+//        if let image = image {
+//            Image(uiImage: image)
+//                .resizable()
+//                .scaledToFit()
+//                .onAppear {
+//                    vision.reText(image: image)
+//                }
+//        }
+
+//            Button("서버 통신") {
+//                vision.informationed()
+//                vision.informationedImage(image: image!)
+//            }
+//            .padding()

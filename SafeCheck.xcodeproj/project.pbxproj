@@ -44,6 +44,7 @@
 		58601EC92BA9D8FC0068B072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58601ECC2BA9D8FC0068B072 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		587975502BAEA6EC00E28A31 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
+		589D08712BCD3846001FACFD /* SafeCheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafeCheck.entitlements; sourceTree = "<group>"; };
 		58A950572BAA724B00D220C0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		58B903452BBBF78F00C83BB0 /* SafeCheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCheckModel.swift; sourceTree = "<group>"; };
 		58DE03752BB59190009DA520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		583609412BB413F6007ADC9B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				589D08722BCF5B37001FACFD /* New Group */,
 				585E1BA92BC8C5F3005AC38A /* Main */,
 				585E1BA82BC8C5E8005AC38A /* Login */,
 			);
@@ -129,10 +131,11 @@
 		58601EC42BA9D8FA0068B072 /* SafeCheck */ = {
 			isa = PBXGroup;
 			children = (
+				589D08712BCD3846001FACFD /* SafeCheck.entitlements */,
 				58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */,
-				58B903472BBBF7B400C83BB0 /* Model */,
 				583609412BB413F6007ADC9B /* View */,
 				583609402BB413DC007ADC9B /* State */,
+				58B903472BBBF7B400C83BB0 /* Model */,
 				58601EC92BA9D8FC0068B072 /* Assets.xcassets */,
 				58DE03752BB59190009DA520 /* Info.plist */,
 				58601ECB2BA9D8FC0068B072 /* Preview Content */,
@@ -154,6 +157,13 @@
 				587975502BAEA6EC00E28A31 /* Vision.swift */,
 			);
 			path = Vision;
+			sourceTree = "<group>";
+		};
+		589D08722BCF5B37001FACFD /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		58A950562BAA724700D220C0 /* Component */ = {
@@ -409,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SafeCheck/SafeCheck.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SafeCheck/Preview Content\"";
@@ -441,6 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SafeCheck/SafeCheck.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SafeCheck/Preview Content\"";

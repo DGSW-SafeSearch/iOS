@@ -40,7 +40,7 @@ class Google: ObservableObject {
                     print(String(decoding: data, as: UTF8.self))
                     let responseData = try JSONDecoder().decode(logined.self, from: data)
                     self.googleLogin = responseData
-                    self.googleLogin!.saveUserIdToUserDefaults()
+                    self.googleLogin!.saveUserId()
                     if UserDefaults.standard.string(forKey: "user_id") != nil {
                         self.isPresent.toggle()
                     }
