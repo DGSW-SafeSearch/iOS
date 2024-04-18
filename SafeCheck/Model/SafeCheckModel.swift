@@ -20,6 +20,7 @@ struct user_entity: Codable {
 // MARK: - ocr
 struct informations: Codable {
     let chemical_substance: chemical_substance
+    let res: String?
     let chemical_id: String?
 }
 

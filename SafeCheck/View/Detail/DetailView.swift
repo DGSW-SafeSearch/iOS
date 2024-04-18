@@ -33,12 +33,8 @@ struct DetailView: View {
                 InfoRow(title: "UN 번호", value: vision.unNumber ?? "__empty__")
                 InfoRow(title: "기존 코드", value: information?.chemical_id ?? "__empty__")
             }
-            .overlay(
-                RoundedRectangle(cornerRadius: 0)
-                    .stroke(Color.black, lineWidth: 0.5)
-            )
-            .padding(.horizontal, 10)
-            .padding(.bottom, 200)
+            .padding(.horizontal, 15)
+            .padding(.bottom, 250)
             
             // MARK: - 로고
             VStack {
@@ -60,16 +56,20 @@ struct InfoRow: View {
     var value: String
     
     var body: some View {
-        HStack(spacing: 0) {
-            Text(title)
-                .foregroundColor(.white)
-                .font(.title3)
-                .frame(width: 120, height: 60)
-                .background(Color("logoColor"))
-            
-            Text(value)
-                .padding(.horizontal, 15)
-                .frame(maxWidth: .infinity, alignment: .leading)
-        }
+            HStack(spacing: 0) {
+                Text(title)
+                    .foregroundColor(.white)
+                    .font(.title3)
+                    .frame(width: 120, height: 60)
+                    .background(Color("logoColor"))
+                Text(value)
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 15)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .overlay(
+                RoundedRectangle(cornerRadius: 0)
+                    .stroke(Color.gray, lineWidth: 0.3)
+            )
     }
 }

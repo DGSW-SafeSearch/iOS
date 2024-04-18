@@ -14,6 +14,7 @@ struct LoginView: View {
                 .padding(.top, 40)
             
             Text("로그인")
+                .foregroundColor(.black)
                 .bold()
                 .padding(.top,50)
                 .font(.title2)

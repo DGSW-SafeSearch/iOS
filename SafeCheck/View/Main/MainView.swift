@@ -4,7 +4,6 @@ struct MainView: View {
     @ObservedObject private var vision = Vision()
     @State var isPresented: Bool = false
     @State var isPresent: Bool = false
-    @State var isPresen: Bool = false
     @State var image: UIImage?
     
     var body: some View {
@@ -19,10 +18,12 @@ struct MainView: View {
                     .padding(20)
                 if let image = image, vision.casNumber == nil {
                     Text("정보가 없습니다")
+                        .foregroundColor(.black)
                         .font(.title2)
                         .padding(.top,20)
                 } else {
                     Text("CAS번호 검색")
+                        .foregroundColor(.black)
                         .font(.title2)
                         .padding(.top,20)
                 }
@@ -35,6 +36,7 @@ struct MainView: View {
                         Image("camera")
                             .padding(10)
                         Text("사진 촬영")
+                            .foregroundColor(.black)
                             .font(.title3)
                     }
                     .frame(maxWidth: .infinity, maxHeight: 170)
@@ -51,18 +53,22 @@ struct MainView: View {
                 .onChange(of: image) { _ in
                     if let image = image {
                         vision.reText(image: image)
+                        vision.informationed()
                     }
                 }
                 .padding()
                 
                 // MARK: - 밑
-                Image("logo")
-                
                 if let image = image, vision.casNumber == nil {
                     Text("재촬영을 진행해주세요")
+                        .foregroundColor(.black)
                 } else {
+                    Image("logo")
+                        .padding()
                     Text("* 세이프서치의 CAS 번호 정보는")
+                        .foregroundColor(.black)
                     Text("화학물질정보처리시스템에서 제공하는 내용입니다.")
+                        .foregroundColor(.black)
                 }
                 
                 // MARK: - 로그아웃
@@ -79,6 +85,9 @@ struct MainView: View {
                 // MARK: - footer
                 Image("footer")
                     .padding()
+            }
+            .fullScreenCover(isPresented: $vision.isPresented) {
+                DetailView()
             }
         }
     }

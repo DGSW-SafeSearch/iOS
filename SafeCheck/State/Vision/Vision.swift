@@ -6,6 +6,7 @@ import Alamofire
 class Vision: ObservableObject {
     @Published var login: logined?
     @Published var information: informations?
+    @Published var isPresented: Bool = false
     @Published var ocrString: String?
     @Published var casNumber: String?
     @Published var unNumber: String?
@@ -79,6 +80,9 @@ class Vision: ObservableObject {
                     print(String(decoding: data, as: UTF8.self))
                     let responseData = try JSONDecoder().decode(informations.self, from: data)
                     self.information = responseData
+                    if self.information?.res == "200" {
+                        self.isPresented.toggle()
+                    }
                     print(responseData)
                 } catch {
                     print(error)
