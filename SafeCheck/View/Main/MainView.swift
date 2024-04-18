@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject private var vision = Vision()
+    @ObservedObject var vision = Vision()
+    @State var information: informations?
     @State var isPresented: Bool = false
     @State var isPresent: Bool = false
     @State var image: UIImage?
@@ -88,6 +89,7 @@ struct MainView: View {
             }
             .fullScreenCover(isPresented: $vision.isPresented) {
                 DetailView()
+                    .environmentObject(vision)
             }
         }
     }

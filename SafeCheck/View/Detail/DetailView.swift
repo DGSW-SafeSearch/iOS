@@ -1,17 +1,14 @@
 import SwiftUI
 
 struct DetailView: View {
-    @State var information: informations?
-    @ObservedObject private var vision = Vision()
+    @EnvironmentObject var vision: Vision
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        // MARK: - 배경
         ZStack {
             Color("mainColor")
                 .ignoresSafeArea()
             
-            // MARK: - dismiss
             HStack {
                 VStack {
                     Button(action: {
@@ -25,23 +22,20 @@ struct DetailView: View {
             }
             .padding()
             
-            // MARK: - 정보
             VStack(spacing: 0) {
-                InfoRow(title: "한국어 이름", value: information?.chemical_substance.korean_name ?? "__empty__")
-                InfoRow(title: "영어 이름", value: information?.chemical_substance.english_name ?? "__empty__")
+                InfoRow(title: "한국어 이름", value: vision.information?.chemical_substance.korean_name ?? "__empty__")
+                InfoRow(title: "영어 이름", value: vision.information?.chemical_substance.english_name ?? "__empty__")
                 InfoRow(title: "CAS 번호", value: vision.casNumber ?? "__empty__")
                 InfoRow(title: "UN 번호", value: vision.unNumber ?? "__empty__")
-                InfoRow(title: "기존 코드", value: information?.chemical_id ?? "__empty__")
+                InfoRow(title: "기존 코드", value: vision.information?.chemical_id ?? "__empty__")
             }
             .padding(.horizontal, 15)
             .padding(.bottom, 250)
             
-            // MARK: - 로고
             VStack {
                 Image("main")
                     .padding(20)
                 
-                // MARK: - footer
                 Spacer()
                 Image("footer")
                     .padding()
