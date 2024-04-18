@@ -5,12 +5,16 @@ struct MainView: View {
     @ObservedObject private var google = Google()
     @State var isPresented: Bool = false
     @State var isPresent: Bool = false
+    @State var a: Bool = false
     @State var image: UIImage?
     
     var body: some View {
+        // MARK: - 배경
         ZStack {
             Color("mainColor")
                 .ignoresSafeArea()
+            
+            // MARK: - 로고
             VStack {
                 Image("main")
                     .padding(20)
@@ -18,6 +22,7 @@ struct MainView: View {
                     .font(.title2)
                     .padding(.top,20)
                 
+                // MARK: - 사진 버튼
                 Button(action: {
                     isPresented.toggle()
                 }) {
@@ -45,10 +50,12 @@ struct MainView: View {
                 }
                 .padding()
                 
+                // MARK: - 밑
                 Image("logo")
                 
                 Text("* 세이프서치의 CAS 번호 정보는\n화학물질정보처리시스템에서 제공하는 내용입니다.")
                 
+                // MARK: - 로그아웃
                 Button("돌아가기") {
                     UserDefaults.standard.removeObject(forKey: "user_id")
                     isPresent.toggle()
@@ -58,6 +65,8 @@ struct MainView: View {
                     LoginView()
                 }
                 Spacer()
+                
+                // MARK: - footer
                 Image("footer")
                     .padding()
             }

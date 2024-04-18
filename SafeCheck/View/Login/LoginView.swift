@@ -17,8 +17,9 @@ struct LoginView: View {
                 .bold()
                 .padding(.top,50)
                 .font(.title2)
+            
+            // MARK: - 구글
             VStack(spacing: 25) {
-                // MARK: - 구글
                 Button(action: {
                     google.handleSignInButton()
                 }) {
@@ -44,7 +45,7 @@ struct LoginView: View {
                 
                 // MARK: - 애플
                 Button(action: {
-                    apple.handleSignInButton()
+                    
                 }) {
                     HStack(spacing: 80) {
                         Image("apple")
@@ -64,10 +65,11 @@ struct LoginView: View {
             }
             .padding(.top,30)
             Spacer()
+            
+            // MARK: - footer
             Image("footer")
                 .padding()
         }
         .padding(.horizontal,20)
-        
     }
 }

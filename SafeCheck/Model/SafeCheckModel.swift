@@ -1,6 +1,6 @@
 import Foundation
 
-let url = "http://10.80.162.233:8084"
+let url = "http://10.80.163.3:8084"
 
 // MARK: - 로그인
 struct logined: Codable {
@@ -9,10 +9,8 @@ struct logined: Codable {
     let res: String
     
     func saveUserId() {
-        if let user_id = user_id {
             UserDefaults.standard.set(user_id, forKey: "user_id")
         }
-    }
 }
 
 struct user_entity: Codable {
@@ -23,7 +21,6 @@ struct user_entity: Codable {
 struct informations: Codable {
     let chemical_substance: chemical_substance
     let chemical_id: String?
-
 }
 
 struct chemical_substance: Codable {

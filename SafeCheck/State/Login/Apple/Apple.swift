@@ -6,10 +6,6 @@ class Apple: ObservableObject {
     @Published var mail: String = ""
     @Published var isPresent: Bool = false
     
-    func handleSignInButton() {
-        
-    }
-    
     func login() {
         let query : Parameters = [
             "emailAddress" : mail
