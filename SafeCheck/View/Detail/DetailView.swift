@@ -65,7 +65,7 @@ struct InfoRow: View {
                 .foregroundColor(.white)
                 .font(.title3)
                 .frame(width: 120, height: 60)
-                .background(Color("Color"))
+                .background(Color("logoColor"))
             
             Text(value)
                 .padding(.horizontal, 15)

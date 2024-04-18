@@ -2,10 +2,9 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject private var vision = Vision()
-    @ObservedObject private var google = Google()
     @State var isPresented: Bool = false
     @State var isPresent: Bool = false
-    @State var a: Bool = false
+    @State var isPresen: Bool = false
     @State var image: UIImage?
     
     var body: some View {
@@ -18,9 +17,15 @@ struct MainView: View {
             VStack {
                 Image("main")
                     .padding(20)
-                Text("CAS번호 검색")
-                    .font(.title2)
-                    .padding(.top,20)
+                if let image = image, vision.casNumber == nil {
+                    Text("정보가 없습니다")
+                        .font(.title2)
+                        .padding(.top,20)
+                } else {
+                    Text("CAS번호 검색")
+                        .font(.title2)
+                        .padding(.top,20)
+                }
                 
                 // MARK: - 사진 버튼
                 Button(action: {
@@ -53,10 +58,15 @@ struct MainView: View {
                 // MARK: - 밑
                 Image("logo")
                 
-                Text("* 세이프서치의 CAS 번호 정보는\n화학물질정보처리시스템에서 제공하는 내용입니다.")
+                if let image = image, vision.casNumber == nil {
+                    Text("재촬영을 진행해주세요")
+                } else {
+                    Text("* 세이프서치의 CAS 번호 정보는")
+                    Text("화학물질정보처리시스템에서 제공하는 내용입니다.")
+                }
                 
                 // MARK: - 로그아웃
-                Button("돌아가기") {
+                Button("로그아웃") {
                     UserDefaults.standard.removeObject(forKey: "user_id")
                     isPresent.toggle()
                 }
@@ -73,18 +83,3 @@ struct MainView: View {
         }
     }
 }
-
-//        if let image = image {
-//            Image(uiImage: image)
-//                .resizable()
-//                .scaledToFit()
-//                .onAppear {
-//                    vision.reText(image: image)
-//                }
-//        }
-
-//            Button("서버 통신") {
-//                vision.informationed()
-//                vision.informationedImage(image: image!)
-//            }
-//            .padding()
