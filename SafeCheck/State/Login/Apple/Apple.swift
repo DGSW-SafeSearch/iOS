@@ -3,12 +3,17 @@ import AuthenticationServices
 
 class Apple: ObservableObject {
     @Published var appleLogin: logined?
-    @Published var mail: String = ""
+    @Published var UserIdentifier: String = ""
     @Published var isPresent: Bool = false
+    
+    func handleSignInButton() {
+        let button = ASAuthorizationAppleIDButton()
+        
+    }
     
     func login() {
         let query : Parameters = [
-            "emailAddress" : mail
+            "UserIdentifier" : UserIdentifier
         ]
         
         AF.request("\(url)/auth/apple/ios",

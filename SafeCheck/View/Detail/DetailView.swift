@@ -8,7 +8,6 @@ struct DetailView: View {
         ZStack {
             Color("mainColor")
                 .ignoresSafeArea()
-            
             HStack {
                 VStack {
                     Button(action: {
@@ -35,7 +34,6 @@ struct DetailView: View {
             VStack {
                 Image("main")
                     .padding(20)
-                
                 Spacer()
                 Image("footer")
                     .padding()

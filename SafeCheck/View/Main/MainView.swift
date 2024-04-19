@@ -17,7 +17,7 @@ struct MainView: View {
             VStack {
                 Image("main")
                     .padding(20)
-                if let image = image, vision.casNumber == nil {
+                if image != nil, vision.casNumber == nil {
                     Text("정보가 없습니다")
                         .foregroundColor(.black)
                         .font(.title2)
@@ -53,6 +53,7 @@ struct MainView: View {
                 }
                 .onChange(of: image) { _ in
                     if let image = image {
+                        vision.casNumber = nil
                         vision.reText(image: image)
                         vision.informationed()
                     }
@@ -60,7 +61,7 @@ struct MainView: View {
                 .padding()
                 
                 // MARK: - 밑
-                if let image = image, vision.casNumber == nil {
+                if image != nil, vision.casNumber == nil {
                     Text("재촬영을 진행해주세요")
                         .foregroundColor(.black)
                 } else {
