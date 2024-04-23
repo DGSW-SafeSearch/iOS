@@ -71,28 +71,28 @@ struct LoginView: View {
                 .padding(.top,30)
                 Spacer()
                 
-                SignInWithAppleButton(
-                    onRequest: { request in
-                        request.requestedScopes = [.fullName, .email]
-                    },
-                    onCompletion: { result in
-                        switch result {
-                        case .success(let authResults):
-                            switch authResults.credential{
-                            case let appleIDCredential as ASAuthorizationAppleIDCredential:
-                                let UserIdentifier = appleIDCredential.user
-                                print(UserIdentifier)
-                                
-                            default:
-                                break
-                            }
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                        }
-                    }
-                )
-                .frame(width : UIScreen.main.bounds.width * 0.9, height:50)
-                .cornerRadius(5)
+//                SignInWithAppleButton(
+//                    onRequest: { request in
+//                        request.requestedScopes = [.fullName, .email]
+//                    },
+//                    onCompletion: { result in
+//                        switch result {
+//                        case .success(let authResults):
+//                            switch authResults.credential{
+//                            case let appleIDCredential as ASAuthorizationAppleIDCredential:
+//                                let UserIdentifier = appleIDCredential.user
+//                                print(UserIdentifier)
+//                                
+//                            default:
+//                                break
+//                            }
+//                        case .failure(let error):
+//                            print(error.localizedDescription)
+//                        }
+//                    }
+//                )
+//                .frame(width : UIScreen.main.bounds.width * 0.9, height:50)
+//                .cornerRadius(5)
                 
                 // MARK: - footer
                 Image("footer")

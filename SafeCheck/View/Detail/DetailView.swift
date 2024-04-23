@@ -29,7 +29,7 @@ struct DetailView: View {
                 InfoRow(title: "기존 코드", value: vision.information?.chemical_id ?? "__empty__")
             }
             .padding(.horizontal, 15)
-            .padding(.bottom, 250)
+            .padding(.bottom, 200)
             
             VStack {
                 Image("main")
@@ -52,7 +52,7 @@ struct InfoRow: View {
                 Text(title)
                     .foregroundColor(.white)
                     .font(.title3)
-                    .frame(width: 120, height: 60)
+                    .frame(width: 120, height: 80)
                     .background(Color("logoColor"))
                 Text(value)
                     .foregroundColor(.black)
