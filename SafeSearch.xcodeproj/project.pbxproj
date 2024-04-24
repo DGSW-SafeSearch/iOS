@@ -11,7 +11,7 @@
 		5805AA7E2BB0FA6C00CBE35E /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5805AA7D2BB0FA6C00CBE35E /* Camera-SwiftUI */; };
 		5805AA802BB0FAFE00CBE35E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5805AA7F2BB0FAFE00CBE35E /* GoogleSignIn */; };
 		5805AA822BB0FAFE00CBE35E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5805AA812BB0FAFE00CBE35E /* GoogleSignInSwift */; };
-		58601EC62BA9D8FA0068B072 /* SafeCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */; };
+		58601EC62BA9D8FA0068B072 /* SafeSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58601EC52BA9D8FA0068B072 /* SafeSearchApp.swift */; };
 		58601EC82BA9D8FA0068B072 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58601EC72BA9D8FA0068B072 /* LoginView.swift */; };
 		58601ECA2BA9D8FC0068B072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58601EC92BA9D8FC0068B072 /* Assets.xcassets */; };
 		58601ECD2BA9D8FC0068B072 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58601ECC2BA9D8FC0068B072 /* Preview Assets.xcassets */; };
@@ -19,7 +19,7 @@
 		586B96922BCF7A2E004F3B72 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B96912BCF7A2E004F3B72 /* DetailView.swift */; };
 		587975512BAEA6EC00E28A31 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587975502BAEA6EC00E28A31 /* Vision.swift */; };
 		58A950582BAA724B00D220C0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A950572BAA724B00D220C0 /* CameraView.swift */; };
-		58B903462BBBF78F00C83BB0 /* SafeCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B903452BBBF78F00C83BB0 /* SafeCheckModel.swift */; };
+		58B903462BBBF78F00C83BB0 /* SafeSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B903452BBBF78F00C83BB0 /* SafeSearchModel.swift */; };
 		58C194D62BB158DA00F48D1D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 58C194D52BB158DA00F48D1D /* Alamofire */; };
 		58E74FF02BB25DE400BFA411 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E74FEF2BB25DE400BFA411 /* Google.swift */; };
 		58E74FF32BB2BDE800BFA411 /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E74FF22BB2BDE800BFA411 /* Apple.swift */; };
@@ -40,17 +40,16 @@
 
 /* Begin PBXFileReference section */
 		580119002BC55737007B0D6A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		58601EC22BA9D8FA0068B072 /* SafeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCheckApp.swift; sourceTree = "<group>"; };
+		58601EC22BA9D8FA0068B072 /* SafeSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58601EC52BA9D8FA0068B072 /* SafeSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeSearchApp.swift; sourceTree = "<group>"; };
 		58601EC72BA9D8FA0068B072 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		58601EC92BA9D8FC0068B072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58601ECC2BA9D8FC0068B072 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		586B968E2BCF77A1004F3B72 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		586B96912BCF7A2E004F3B72 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		587975502BAEA6EC00E28A31 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
-		589D08712BCD3846001FACFD /* SafeCheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafeCheck.entitlements; sourceTree = "<group>"; };
 		58A950572BAA724B00D220C0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		58B903452BBBF78F00C83BB0 /* SafeCheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCheckModel.swift; sourceTree = "<group>"; };
+		58B903452BBBF78F00C83BB0 /* SafeSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeSearchModel.swift; sourceTree = "<group>"; };
 		58DE03752BB59190009DA520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58E74FEF2BB25DE400BFA411 /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
 		58E74FF22BB2BDE800BFA411 /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
@@ -128,7 +127,7 @@
 		58601EC32BA9D8FA0068B072 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				58601EC22BA9D8FA0068B072 /* SafeCheck.app */,
+				58601EC22BA9D8FA0068B072 /* SafeSearch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,8 +135,7 @@
 		58601EC42BA9D8FA0068B072 /* SafeCheck */ = {
 			isa = PBXGroup;
 			children = (
-				589D08712BCD3846001FACFD /* SafeCheck.entitlements */,
-				58601EC52BA9D8FA0068B072 /* SafeCheckApp.swift */,
+				58601EC52BA9D8FA0068B072 /* SafeSearchApp.swift */,
 				583609412BB413F6007ADC9B /* View */,
 				583609402BB413DC007ADC9B /* State */,
 				58B903472BBBF7B400C83BB0 /* Model */,
@@ -191,7 +189,7 @@
 		58B903472BBBF7B400C83BB0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				58B903452BBBF78F00C83BB0 /* SafeCheckModel.swift */,
+				58B903452BBBF78F00C83BB0 /* SafeSearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,9 +213,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58601EC12BA9D8FA0068B072 /* SafeCheck */ = {
+		58601EC12BA9D8FA0068B072 /* SafeSearch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58601ED02BA9D8FC0068B072 /* Build configuration list for PBXNativeTarget "SafeCheck" */;
+			buildConfigurationList = 58601ED02BA9D8FC0068B072 /* Build configuration list for PBXNativeTarget "SafeSearch" */;
 			buildPhases = (
 				58601EBE2BA9D8FA0068B072 /* Sources */,
 				58601EBF2BA9D8FA0068B072 /* Frameworks */,
@@ -228,7 +226,7 @@
 			);
 			dependencies = (
 			);
-			name = SafeCheck;
+			name = SafeSearch;
 			packageProductDependencies = (
 				5805AA7D2BB0FA6C00CBE35E /* Camera-SwiftUI */,
 				5805AA7F2BB0FAFE00CBE35E /* GoogleSignIn */,
@@ -236,7 +234,7 @@
 				58C194D52BB158DA00F48D1D /* Alamofire */,
 			);
 			productName = SafeCheck;
-			productReference = 58601EC22BA9D8FA0068B072 /* SafeCheck.app */;
+			productReference = 58601EC22BA9D8FA0068B072 /* SafeSearch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +252,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 58601EBD2BA9D8FA0068B072 /* Build configuration list for PBXProject "SafeCheck" */;
+			buildConfigurationList = 58601EBD2BA9D8FA0068B072 /* Build configuration list for PBXProject "SafeSearch" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -273,7 +271,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58601EC12BA9D8FA0068B072 /* SafeCheck */,
+				58601EC12BA9D8FA0068B072 /* SafeSearch */,
 			);
 		};
 /* End PBXProject section */
@@ -302,9 +300,9 @@
 				58601EC82BA9D8FA0068B072 /* LoginView.swift in Sources */,
 				586B968F2BCF77A1004F3B72 /* SplashView.swift in Sources */,
 				587975512BAEA6EC00E28A31 /* Vision.swift in Sources */,
-				58B903462BBBF78F00C83BB0 /* SafeCheckModel.swift in Sources */,
+				58B903462BBBF78F00C83BB0 /* SafeSearchModel.swift in Sources */,
 				58E74FF02BB25DE400BFA411 /* Google.swift in Sources */,
-				58601EC62BA9D8FA0068B072 /* SafeCheckApp.swift in Sources */,
+				58601EC62BA9D8FA0068B072 /* SafeSearchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +453,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.SafeCheck;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.SafeSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -468,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SafeCheck/SafeCheck.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SafeSearchRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SafeCheck/Preview Content\"";
@@ -488,7 +486,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.SafeCheck;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.SafeSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -499,7 +497,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58601EBD2BA9D8FA0068B072 /* Build configuration list for PBXProject "SafeCheck" */ = {
+		58601EBD2BA9D8FA0068B072 /* Build configuration list for PBXProject "SafeSearch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58601ECE2BA9D8FC0068B072 /* Debug */,
@@ -508,7 +506,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58601ED02BA9D8FC0068B072 /* Build configuration list for PBXNativeTarget "SafeCheck" */ = {
+		58601ED02BA9D8FC0068B072 /* Build configuration list for PBXNativeTarget "SafeSearch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58601ED12BA9D8FC0068B072 /* Debug */,

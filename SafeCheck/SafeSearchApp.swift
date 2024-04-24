@@ -2,8 +2,7 @@ import SwiftUI
 import GoogleSignIn
 
 @main
-struct SafeCheckApp: App {
-    
+struct SafeSearchApp: App {
     var body: some Scene {
         WindowGroup {
             if UserDefaults.standard.string(forKey: "user_id") != nil {

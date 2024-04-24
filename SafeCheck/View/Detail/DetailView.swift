@@ -56,7 +56,7 @@ struct InfoRow: View {
                     .background(Color("logoColor"))
                 Text(value)
                     .foregroundColor(.black)
-                    .padding(.horizontal, 15)
+                    .padding(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .overlay(

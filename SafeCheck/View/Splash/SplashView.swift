@@ -5,9 +5,14 @@ struct SplashView: View {
     
     var body: some View {
         ZStack(alignment: .center) {
-            Image("splash")
-                .resizable()
+            Color("logoColor")
                 .ignoresSafeArea()
+            
+            VStack {
+                Image("splash")
+                    .padding(.top, 150)
+                Spacer()
+            }
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {

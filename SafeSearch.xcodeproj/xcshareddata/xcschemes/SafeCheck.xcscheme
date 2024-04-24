@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "58601EC12BA9D8FA0068B072"
-               BuildableName = "SafeCheck.app"
-               BlueprintName = "SafeCheck"
-               ReferencedContainer = "container:SafeCheck.xcodeproj">
+               BuildableName = "SafeSearch.app"
+               BlueprintName = "SafeSearch"
+               ReferencedContainer = "container:SafeSearch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58601EC12BA9D8FA0068B072"
-            BuildableName = "SafeCheck.app"
-            BlueprintName = "SafeCheck"
-            ReferencedContainer = "container:SafeCheck.xcodeproj">
+            BuildableName = "SafeSearch.app"
+            BlueprintName = "SafeSearch"
+            ReferencedContainer = "container:SafeSearch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58601EC12BA9D8FA0068B072"
-            BuildableName = "SafeCheck.app"
-            BlueprintName = "SafeCheck"
-            ReferencedContainer = "container:SafeCheck.xcodeproj">
+            BuildableName = "SafeSearch.app"
+            BlueprintName = "SafeSearch"
+            ReferencedContainer = "container:SafeSearch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
