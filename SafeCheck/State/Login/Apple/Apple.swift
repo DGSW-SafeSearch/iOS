@@ -48,7 +48,6 @@ extension Apple: ASAuthorizationControllerDelegate {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             let userIdentifier = appleIDCredential.user
             self.UserIdentifier = userIdentifier
-            print(self.UserIdentifier)
             login()
         }
     }
