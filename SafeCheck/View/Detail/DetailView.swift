@@ -26,10 +26,10 @@ struct DetailView: View {
             
             // MARK: - 뷰
             VStack(spacing: 0) {
-                InfoRow(title: "한국어 이름", value: vision.information?.chemical_substance.korean_name ?? "__empty__")
-                InfoRow(title: "영어 이름", value: vision.information?.chemical_substance.english_name ?? "__empty__")
+                InfoRow(title: "한국어 이름", value: vision.information?.chemical_substance?.korean_name ?? "__empty__")
+                InfoRow(title: "영어 이름", value: vision.information?.chemical_substance?.english_name ?? "__empty__")
                 InfoRow(title: "CAS 번호", value: vision.casNumber ?? "__empty__")
-                InfoRow(title: "UN 번호", value: vision.information?.chemical_substance.un_number ?? "__empty__")
+                InfoRow(title: "UN 번호", value: vision.information?.chemical_substance?.un_number ?? "__empty__")
                 InfoRow(title: "기존 코드", value: vision.information?.chemical_id ?? "__empty__")
             }
             .padding(.horizontal, 15)
