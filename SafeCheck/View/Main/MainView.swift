@@ -98,8 +98,3 @@ struct MainView: View {
         }
     }
 }
-
-//if vision.isprogress == true {
-//    ProgressView()
-//        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-//}
