@@ -1,6 +1,6 @@
 import Foundation
 
-let url = "http://10.80.162.105:8084"
+let url = "http://10.80.162.142:8080"
 
 // MARK: - 로그인
 struct logined: Codable {
@@ -22,9 +22,11 @@ struct informations: Codable {
     let chemical_substance: chemical_substance
     let res: String?
     let chemical_id: String?
+    let ocr_id: String?
 }
 
 struct chemical_substance: Codable {
+    let un_number: String?
     let english_name: String?
     let korean_name: String?
 }

@@ -63,7 +63,7 @@ struct LoginView: View {
                         .background(Color.black)
                         .cornerRadius(3)
                         .contrast(0.5)
-                        .fullScreenCover(isPresented: $google.isPresent) {
+                        .fullScreenCover(isPresented: $apple.isPresent) {
                             MainView()
                         }
                     }

@@ -9,7 +9,6 @@ class Vision: ObservableObject {
     @Published var isPresented: Bool = false
     @Published var ocrString: String?
     @Published var casNumber: String?
-    @Published var unNumber: String?
     
     func reText(image: UIImage) {
         guard let Image = image.cgImage else { fatalError("이미지 오류") }
@@ -21,7 +20,6 @@ class Vision: ObservableObject {
                 .joined(separator: "\n")
             self?.ocrString = text
             self?.discriminatorCas()
-            self?.discriminatorUn()
         }
         do {
             print(try request.supportedRecognitionLanguages())
@@ -46,27 +44,11 @@ class Vision: ObservableObject {
         }
     }
     
-    func discriminatorUn() {
-        guard let ocrString = ocrString else { return }
-        let pattern = #"UN(?::)?\s*(\d+)"#
-        guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else {
-            fatalError("dmdi")
-        }
-        let matches = regex.matches(in: ocrString, options: [], range: NSRange(location: 0, length: ocrString.utf16.count))
-        if let match = matches.first, let range = Range(match.range(at: 1), in: ocrString) {
-            let unNumber = String(ocrString[range])
-            self.unNumber = unNumber
-        } else {
-            print("dmdi")
-        }
-    }
-    
     func informationed() {
         let query : Parameters = [
             "requestUserId" : UserDefaults.standard.string(forKey: "user_id") ?? "__empty__",
             "ocr_text" : ocrString ?? "__empty__",
-            "ocr_cas" : casNumber ?? "__empty__",
-            "ocr_un" : unNumber ?? "__empty__",
+            "ocr_cas" : casNumber ?? "__empty__"
         ]
         
         AF.request("\(url)/ocr/process",
@@ -83,39 +65,9 @@ class Vision: ObservableObject {
                     if self.information?.res == "200" {
                         self.isPresented.toggle()
                     }
-                    print(responseData)
                 } catch {
                     print(error)
                 }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func informationedImage(image: UIImage) {
-        guard let imageData = image.jpegData(compressionQuality: 1.0) else { return }
-        
-        let query : Parameters = [
-            "requestUserId" : UserDefaults.standard.string(forKey: "user_id") ?? "__empty__",
-            "image" : imageData
-        ]
-        
-        AF.upload(multipartFormData: { multipartFormData in
-            for (key, value) in query {
-                if let data = value as? Data {
-                    multipartFormData.append(data, withName: key, fileName: "image.jpg", mimeType: "image/jpeg")
-                } else {
-                    if let stringValue = value as? String {
-                        multipartFormData.append(stringValue.data(using: .utf8)!, withName: key)
-                    }
-                }
-            }
-        }, to: "\(url)/ocr")
-        .responseData { response in
-            switch response.result {
-            case .success(let data):
-                print(String(decoding: data, as: UTF8.self))
             case .failure(let error):
                 print(error)
             }

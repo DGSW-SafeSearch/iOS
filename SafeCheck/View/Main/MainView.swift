@@ -2,7 +2,6 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var vision = Vision()
-    @State var information: informations?
     @State var isPresented: Bool = false
     @State var isPresent: Bool = false
     @State var image: UIImage?
@@ -17,7 +16,8 @@ struct MainView: View {
             VStack {
                 Image("main")
                     .padding(20)
-                if image != nil, vision.casNumber == nil {
+                
+                if vision.information?.res == "0" {
                     Text("정보가 없습니다")
                         .foregroundColor(.black)
                         .font(.title2)
@@ -51,17 +51,16 @@ struct MainView: View {
                 .fullScreenCover(isPresented: $isPresented) {
                     CameraView($image)
                 }
-                .onChange(of: image) { _ in
-                    if let image = image {
-                        vision.casNumber = nil
-                        vision.reText(image: image)
+                .onChange(of: image) { newImage in
+                    if let newImage = newImage {
+                        vision.reText(image: newImage)
                         vision.informationed()
                     }
                 }
                 .padding()
                 
                 // MARK: - 밑
-                if image != nil, vision.casNumber == nil {
+                if vision.information?.res == "0" {
                     Text("재촬영을 진행해주세요")
                         .foregroundColor(.black)
                 } else {
@@ -72,6 +71,7 @@ struct MainView: View {
                     Text("화학물질정보처리시스템에서 제공하는 내용입니다.")
                         .foregroundColor(.black)
                 }
+            
                 
                 // MARK: - 로그아웃
                 Button("로그아웃") {

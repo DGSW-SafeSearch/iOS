@@ -25,22 +25,21 @@ class Google: ObservableObject {
     }
     
     func login() {
-        let query : Parameters = [
-            "emailAddress" : mail
+        let query: Parameters = [
+            "emailAddress": mail
         ]
         
         AF.request("\(url)/auth/google/ios",
                    method: .post,
                    parameters: query)
-        
         .responseData { response in
             switch response.result {
             case .success(let data):
                 do {
                     print(String(decoding: data, as: UTF8.self))
                     let responseData = try JSONDecoder().decode(logined.self, from: data)
+                    responseData.saveUserId()
                     self.googleLogin = responseData
-                    self.googleLogin!.saveUserId()
                     if UserDefaults.standard.string(forKey: "user_id") != nil {
                         self.isPresent.toggle()
                     }
@@ -52,4 +51,5 @@ class Google: ObservableObject {
             }
         }
     }
+
 }
