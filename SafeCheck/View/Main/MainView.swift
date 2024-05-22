@@ -91,6 +91,15 @@ struct MainView: View {
                 DetailView()
                     .environmentObject(vision)
             }
+            
+            // MARK: - ProgressView
+            
+            
         }
     }
 }
+
+//if vision.isprogress == true {
+//    ProgressView()
+//        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+//}

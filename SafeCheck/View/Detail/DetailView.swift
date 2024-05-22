@@ -14,6 +14,7 @@ struct DetailView: View {
             HStack {
                 VStack {
                     Button(action: {
+                        vision.casNumber = nil
                         dismiss()
                     }) {
                         Image("back")
@@ -53,20 +54,20 @@ struct InfoRow: View {
     var value: String
     
     var body: some View {
-            HStack(spacing: 0) {
-                Text(title)
-                    .foregroundColor(.white)
-                    .font(.title3)
-                    .frame(width: 120, height: 80)
-                    .background(Color("logoColor"))
-                Text(value)
-                    .foregroundColor(.black)
-                    .padding(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
-            .overlay(
-                RoundedRectangle(cornerRadius: 0)
-                    .stroke(Color.gray, lineWidth: 0.3)
-            )
+        HStack(spacing: 0) {
+            Text(title)
+                .foregroundColor(.white)
+                .font(.title3)
+                .frame(width: 120, height: 80)
+                .background(Color("logoColor"))
+            Text(value)
+                .foregroundColor(.black)
+                .padding(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .overlay(
+            RoundedRectangle(cornerRadius: 0)
+                .stroke(Color.gray, lineWidth: 0.3)
+        )
     }
 }

@@ -7,6 +7,7 @@ class Vision: ObservableObject {
     @Published var login: logined?
     @Published var information: informations?
     @Published var isPresented: Bool = false
+    @Published var isprogress: Bool = false
     @Published var ocrString: String?
     @Published var casNumber: String?
     
