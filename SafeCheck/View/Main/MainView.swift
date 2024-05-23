@@ -16,6 +16,7 @@ struct MainView: View {
             if vision.isProgress == true {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                    .scaleEffect(2.0)
             }
             
             // MARK: - 로고
