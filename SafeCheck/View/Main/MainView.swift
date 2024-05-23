@@ -38,8 +38,7 @@ struct MainView: View {
                 
                 // MARK: - 사진 버튼
                 Button(action: {
-                    let information = informations(chemical_substance: nil, res: nil, chemical_id: nil, ocr_id: nil)
-                    vision.information = information
+                    vision.information = nil
                     isPresented.toggle()
                 }) {
                     VStack {
