@@ -21,7 +21,7 @@ struct LoginView: View {
                 Text("로그인")
                     .foregroundColor(.black)
                     .bold()
-                    .padding(.top,50)
+                    .padding(.top, 50)
                     .font(.title2)
                 
                 // MARK: - 구글
@@ -59,23 +59,26 @@ struct LoginView: View {
                                 .foregroundColor(.white)
                             Spacer()
                         }
-                        .frame(maxWidth: .infinity, maxHeight: 63)
+                        .frame(maxWidth: .infinity, maxHeight: 60)
                         .background(Color.black)
                         .cornerRadius(3)
-                        .contrast(0.5)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 3)
+                                .stroke(Color.black, lineWidth: 0.5)
+                        )
                         .fullScreenCover(isPresented: $apple.isPresent) {
                             MainView()
                         }
                     }
                 }
-                .padding(.top,30)
+                .padding(.top, 30)
                 Spacer()
                 
                 // MARK: - footer
                 Image("footer")
                     .padding()
             }
-            .padding(.horizontal,20)
+            .padding(.horizontal, 20)
         }
     }
 }

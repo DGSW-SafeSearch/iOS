@@ -28,12 +28,12 @@ struct MainView: View {
                     Text("정보가 없습니다")
                         .foregroundColor(.black)
                         .font(.title2)
-                        .padding(.top,20)
+                        .padding(.top, 20)
                 } else {
                     Text("CAS번호 검색")
                         .foregroundColor(.black)
                         .font(.title2)
-                        .padding(.top,20)
+                        .padding(.top, 20)
                 }
                 
                 // MARK: - 사진 버튼
