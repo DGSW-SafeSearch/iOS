@@ -8,9 +8,15 @@ struct MainView: View {
     
     var body: some View {
         // MARK: - 배경
-        ZStack {
+        ZStack(alignment: .center) {
             Color("mainColor")
                 .ignoresSafeArea()
+            
+            // MARK: - ProgressView
+            if vision.isProgress == true {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+            }
             
             // MARK: - 로고
             VStack {
@@ -53,6 +59,7 @@ struct MainView: View {
                 }
                 .onChange(of: image) { newImage in
                     if let newImage = newImage {
+                        vision.isProgress.toggle()
                         vision.reText(image: newImage)
                         vision.informationed()
                     }
@@ -91,10 +98,6 @@ struct MainView: View {
                 DetailView()
                     .environmentObject(vision)
             }
-            
-            // MARK: - ProgressView
-            
-            
         }
     }
 }
