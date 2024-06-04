@@ -80,17 +80,17 @@ struct MainView: View {
                     Text("화학물질정보처리시스템에서 제공하는 내용입니다.")
                         .foregroundColor(.black)
                 }
+                Spacer()
                 
                 // MARK: - 로그아웃
-                Button("로그아웃") {
-                    UserDefaults.standard.removeObject(forKey: "user_id")
-                    isPresent.toggle()
-                }
-                .padding()
-                .fullScreenCover(isPresented: $isPresent) {
-                    LoginView()
-                }
-                Spacer()
+//                Button("로그아웃") {
+//                    UserDefaults.standard.removeObject(forKey: "user_id")
+//                    isPresent.toggle()
+//                }
+//                .padding()
+//                .fullScreenCover(isPresented: $isPresent) {
+//                    LoginView()
+//                }
                 
                 // MARK: - footer
                 Image("footer")

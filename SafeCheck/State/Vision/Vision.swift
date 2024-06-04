@@ -4,12 +4,13 @@ import VisionKit
 import Alamofire
 
 class Vision: ObservableObject {
-    @Published var login: logined?
+//    @Published var login: logined?
     @Published var information: informations?
     @Published var isPresented: Bool = false
     @Published var isProgress: Bool = false
     @Published var ocrString: String?
     @Published var casNumber: String?
+    @Published var a: String = "1"
     
     func reText(image: UIImage) {
         guard let Image = image.cgImage else { fatalError("이미지 오류") }
@@ -47,7 +48,8 @@ class Vision: ObservableObject {
     
     func informationed() {
         let query : Parameters = [
-            "requestUserId" : UserDefaults.standard.string(forKey: "user_id") ?? "__empty__",
+//            "requestUserId" : UserDefaults.standard.string(forKey: "user_id") ?? "__empty__",
+            "requestUserId" : a,
             "ocr_text" : ocrString ?? "__empty__",
             "ocr_cas" : casNumber ?? "__empty__"
         ]

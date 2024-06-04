@@ -20,8 +20,7 @@ struct SplashView: View {
             }
         }
         .fullScreenCover(isPresented: $isLoding) {
-            LoginView()
+            MainView()
         }
-        
     }
 }

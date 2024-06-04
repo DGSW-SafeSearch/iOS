@@ -1,6 +1,6 @@
 import Foundation
 
-let url = "http://34.67.243.56:8080"
+let url = "http://safesearch.kr"
 
 // MARK: - 로그인
 struct logined: Codable {
