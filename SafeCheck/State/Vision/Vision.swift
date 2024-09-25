@@ -9,7 +9,7 @@ class Vision: ObservableObject {
     @Published var isPresented: Bool = false
     @Published var isProgress: Bool = false
     @Published var ocrString: String?
-    @Published var casNumber: String?
+    @Published var casNumber: [String]?
     @Published var a: String = "1"
     
     func reText(image: UIImage) {
@@ -34,18 +34,16 @@ class Vision: ObservableObject {
     func discriminatorCas() {
         guard let ocrString = ocrString else { return }
         let pattern = "\\b\\d{1,}-\\d{2}-\\d{1}\\b"
-        guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else {
-            fatalError("dmdi")
-        }
+        guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else { return }
         let matches = regex.matches(in: ocrString, options: [], range: NSRange(location: 0, length: ocrString.utf16.count))
-        if let match = matches.first, let range = Range(match.range, in: ocrString) {
-            let casNumber = String(ocrString[range])
-            self.casNumber = casNumber
-        } else {
-            print("dmdi")
+        for match in matches {
+            if let range = Range(match.range, in: ocrString) {
+                let casNumber = String(ocrString[range])
+                self.casNumber?.append(casNumber)
+            }
         }
     }
-    
+
     func informationed() {
         let query : Parameters = [
 //            "requestUserId" : UserDefaults.standard.string(forKey: "user_id") ?? "__empty__",
