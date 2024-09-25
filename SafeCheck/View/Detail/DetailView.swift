@@ -14,7 +14,7 @@ struct DetailView: View {
             HStack {
                 VStack {
                     Button(action: {
-                        vision.casNumber = nil
+                        vision.casNumber.removeAll()
                         dismiss()
                     }) {
                         Image("back")
