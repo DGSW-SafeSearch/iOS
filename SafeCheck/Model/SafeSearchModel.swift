@@ -26,6 +26,7 @@ struct informations: Codable {
 }
 
 struct chemical_substance: Codable {
+    let cas_number: String?
     let un_number: String?
     let english_name: String?
     let korean_name: String?
