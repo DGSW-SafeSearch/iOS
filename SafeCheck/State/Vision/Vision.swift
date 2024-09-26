@@ -10,7 +10,6 @@ class Vision: ObservableObject {
     @Published var isProgress: Bool = false
     @Published var ocrString: String?
     @Published var casNumber: [String] = []
-    @Published var a: String = "1"
     
     func reText(image: UIImage) {
         guard let Image = image.cgImage else { fatalError("이미지 오류") }
@@ -40,7 +39,6 @@ class Vision: ObservableObject {
             if let range = Range(match.range, in: ocrString) {
                 let casNumber = String(ocrString[range])
                 self.casNumber.append(casNumber)
-                print(self.casNumber)
             }
         }
     }
@@ -48,7 +46,7 @@ class Vision: ObservableObject {
     func informationed() {
         let query : Parameters = [
 //            "requestUserId" : UserDefaults.standard.string(forKey: "user_id") ?? "__empty__",
-            "requestUserId" : a,
+            "requestUserId" : "1",
             "ocr_text" : ocrString ?? "__empty__",
             "ocr_cas" : casNumber
         ]
@@ -64,12 +62,11 @@ class Vision: ObservableObject {
                     print(String(decoding: data, as: UTF8.self))
                     let responseData = try JSONDecoder().decode(informations.self, from: data)
                     self.information = responseData
-                    DispatchQueue.main.async {
                         self.isProgress.toggle()
                         if self.information?.res == "200" {
                             self.isPresented.toggle()
                         }
-                    }
+                    
                 } catch {
                     print(error)
                 }
