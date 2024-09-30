@@ -48,10 +48,10 @@ class Vision: ObservableObject {
 //            "requestUserId" : UserDefaults.standard.string(forKey: "user_id") ?? "__empty__",
             "requestUserId" : "1",
             "ocr_text" : ocrString ?? "__empty__",
-            "ocr_cas" : casNumber
+            "cas_number" : casNumber
         ]
         
-        AF.request("\(url)/ocr/process",
+        AF.request("\(url)/ocr/post/list",
                    method: .post,
                    parameters: query,
                    encoding: JSONEncoding.default)
@@ -59,6 +59,7 @@ class Vision: ObservableObject {
             switch response.result {
             case .success(let data):
                 do {
+                    print("Query Parameters: \(query)")
                     print(String(decoding: data, as: UTF8.self))
                     let responseData = try JSONDecoder().decode(informations.self, from: data)
                     self.information = responseData
