@@ -69,7 +69,7 @@ struct MainView: View {
                 .padding()
                 
                 // MARK: - 밑
-                if vision.information?.res == "0" {
+                if vision.information?.res == "100" {
                     Text("재촬영을 진행해주세요")
                         .foregroundColor(.black)
                 } else {
