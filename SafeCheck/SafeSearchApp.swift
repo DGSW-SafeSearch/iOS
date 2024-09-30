@@ -5,7 +5,7 @@ import GoogleSignIn
 struct SafeSearchApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            SplashView()
             
 //            if UserDefaults.standard.string(forKey: "user_id") != nil {
 //                MainView()
