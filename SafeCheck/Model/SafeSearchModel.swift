@@ -1,6 +1,7 @@
 import Foundation
 
-let url = "http://safesearch.kr"
+//let url = "http://safesearch.kr"
+let url = "http://34.72.65.161:80"
 
 // MARK: - 로그인
 struct logined: Codable {
@@ -19,13 +20,12 @@ struct user_entity: Codable {
 
 // MARK: - ocr
 struct informations: Codable {
-    let chemical_substance: chemical_substance?
+    let chemical_substance: [chemical_substance]?
     let res: String?
-    let chemical_id: String?
-    let ocr_id: String?
 }
 
-struct chemical_substance: Codable {
+struct chemical_substance: Codable, Hashable {
+    let chemical_id: Int?
     let cas_number: String?
     let un_number: String?
     let english_name: String?
