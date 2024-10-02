@@ -24,7 +24,7 @@ struct MainView: View {
                 Image("main")
                     .padding(20)
                 
-                if vision.information?.res == "0" {
+                if vision.information?.res == "100" {
                     Text("정보가 없습니다")
                         .foregroundColor(.black)
                         .font(.title2)
