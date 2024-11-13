@@ -70,7 +70,9 @@ struct MainView: View {
                 
                 // MARK: - 밑
                 if vision.information?.res == "100" {
-                    Text("재촬영을 진행해주세요")
+                    Text("사진 촬영이 제대로 안됐습니다.")
+                        .foregroundColor(.black)
+                    Text("다시 촬영해주세요.")
                         .foregroundColor(.black)
                 } else {
                     Image("logo")
